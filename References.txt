@@ -1,0 +1,3 @@
+//Login References
+https://examples.javacodegeeks.com/enterprise-java/spring/mvc/spring-mvc-login-example/
+https://o7planning.org/en/10305/simple-login-java-web-application-using-spring-mvc-spring-security-and-spring-jdbc
