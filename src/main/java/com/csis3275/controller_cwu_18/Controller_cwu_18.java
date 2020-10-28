@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.csis3275.dao_cwu_18.DAOImpl_cwu_18;
 import com.csis3275.model_cwu_18.Booking_cwu_18;
+import com.csis3275.model_cwu_18.Login_epe_07;
 
 @Controller
 public class Controller_cwu_18 {
@@ -32,5 +33,17 @@ public class Controller_cwu_18 {
 		List<Booking_cwu_18> bookings = bookingDAOImpl.getAllBookings();
 		model.addAttribute("bookings", bookings);
 		return "showBookings";
+	}
+	
+	@ModelAttribute("login")
+	public Login_epe_07 setUpAddForm1() {
+		return new Login_epe_07();
+	}
+	
+	@GetMapping("/login")
+	public String login(HttpSession session, Model model) {
+		List<Login_epe_07> logins = bookingDAOImpl.getEmailPassord();
+		model.addAttribute("login", logins);
+		return "login";
 	}
 }
