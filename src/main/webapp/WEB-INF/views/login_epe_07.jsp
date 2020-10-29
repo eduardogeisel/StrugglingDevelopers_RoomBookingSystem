@@ -9,7 +9,7 @@
 </head>
 <body>
 	<h1>Login</h1>
-	<form:form method="POST" action="${pageContext.request.contextPath}/success_epe_07/" modelAttribute="login">
+	<form:form method="POST" action="${pageContext.request.contextPath}/success_epe_07/" modelAttribute="login_epe_07">
 		<table>
 			<tr>
 				<td><label>Email</label></td>

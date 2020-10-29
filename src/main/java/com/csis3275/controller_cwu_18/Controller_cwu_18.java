@@ -41,30 +41,30 @@ public class Controller_cwu_18 {
 	}
 		
 	//Login feature
-	@ModelAttribute("login")
+	@ModelAttribute("login_epe_07")
 	public Login_epe_07 setUpAddForm1() {
 		return new Login_epe_07();
 	}
 	
-	@GetMapping("/login")
+	@GetMapping("/login_epe_07")
 	public String login(HttpSession session, Model model) {
 		//Login_epe_07 login = bookingDAOImpl.getUser("etakisa@shutterfly.com", "NBDhya6k");
-		model.addAttribute("login", new Login_epe_07());
-		return "login";
+		model.addAttribute("login_epe_07", new Login_epe_07());
+		return "login_epe_07";
 	}
 	
 	@RequestMapping(method = RequestMethod.POST, path = "/success_epe_07")
 	public String saveSession(HttpSession session, Login_epe_07 login, BindingResult result, ModelMap model) {
 
 		if (result.hasErrors()) {
-			return "login";
+			return "login_epe_07";
 		}
 		if(bookingDAOImpl.getUser(login.getEmail(), login.getPassword()) == null) {
 			model.addAttribute("message", "Login unsuccessful");
-			return "login";
+			return "login_epe_07";
 		}
 		model.addAttribute("successMessage", "Dear " + login.getEmail() + " , Welcome");
-		model.addAttribute("login", login);
+		model.addAttribute("login_epe_07", login);
 		//creating session for user successful login
 		session.setAttribute("user", login.getEmail());
 		return "success_epe_07";
@@ -74,6 +74,6 @@ public class Controller_cwu_18 {
 	public String sessionEnd(HttpSession session) {
 		session.invalidate();
 		//session.setAttribute("user", null);
-		return "redirect:/login";
+		return "redirect:/login_epe_07";
 	}
 }
