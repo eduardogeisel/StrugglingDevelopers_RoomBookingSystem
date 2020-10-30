@@ -12,8 +12,8 @@ public class BookingMapper_cwu_18 implements RowMapper<Booking_cwu_18>{
 		Booking_cwu_18 booking = new Booking_cwu_18();
 		booking.setBooking_id(rs.getInt("booking_id"));
 		booking.setDateTime(rs.getDate("dateTime"));
-		booking.setStartTime(rs.getTime("startTime"));
-		booking.setEndTime(rs.getTime("endTime"));
+		booking.setStartTime(rs.getTime("startTime").toLocalTime());
+		booking.setEndTime(rs.getTime("endTime").toLocalTime());
 		booking.setTitle(rs.getString("title"));
 		booking.setDescription(rs.getString("description"));
 		booking.setUser_id(rs.getInt("user_id"));

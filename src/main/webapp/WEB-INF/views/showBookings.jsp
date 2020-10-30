@@ -14,24 +14,20 @@
 </head>
 <body>
 		<div class="container">
-		<h1>Show Booking List</h1>
+		<h1>Show Booking List for ${userName}</h1>
 		<hr />
 		<table class="table table-striped table-bordered">
 		<tr>
-				<td>Booking ID</td>
 				<td>Title</td>
 				<td>Room ID</td>
-				<td>User ID</td>
 				<td>Date</td>
 				<td>Start Time</td>
 				<td>End Time</td>
 			</tr>
 			<c:forEach var="booking" items="${bookings}">
 				<tr>
-					<td>${booking.booking_id}</td>
 					<td>${booking.title}</td>
 					<td>${booking.room_id}</td>
-					<td>${booking.user_id}</td>
 					<td>${booking.dateTime}</td>
 					<td>${booking.startTime}</td>
 					<td>${booking.endTime}</td>

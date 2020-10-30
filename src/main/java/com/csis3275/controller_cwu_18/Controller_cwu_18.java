@@ -1,7 +1,9 @@
 package com.csis3275.controller_cwu_18;
 
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import javax.servlet.http.HttpSession;
 
@@ -26,18 +28,59 @@ import com.csis3275.model_cwu_18.Login_epe_07;
 public class Controller_cwu_18 {
 
 	@Autowired
-	DAOImpl_cwu_18 bookingDAOImpl;
+	DAOImpl_cwu_18 daoImpl;
 	
+	
+	//Add Booking Feature
 	@ModelAttribute("booking")
 	public Booking_cwu_18 setUpAddForm() {
 		return new Booking_cwu_18();
 	}
 	
-	@GetMapping("/showBookings")
+	/*@GetMapping("/showBookings")
 	public String showBookings(HttpSession session, Model model) {
-		List<Booking_cwu_18> bookings = bookingDAOImpl.getAllBookings();
+		List<Booking_cwu_18> bookings = daoImpl.getAllBookings();
 		model.addAttribute("bookings", bookings);
 		return "showBookings";
+	}*/
+	
+	@GetMapping("/bookRoom")
+	public String bookRoom(@RequestParam(required = true) int user_id, HttpSession session, Model model) {
+		//Add userId
+		model.addAttribute("user_id", user_id);
+		//Add bookingId
+		String bookingId = getRandomBookingID();
+		model.addAttribute("bookingId", bookingId);
+		return "bookRoom_cwu_18";
+	}
+	@PostMapping("bookRoom")
+	public String insertBooking(@RequestParam(required = true) int user_id,@ModelAttribute("booking") Booking_cwu_18 newBooking, Model model) {
+		daoImpl.createBooking(newBooking);
+		List<Booking_cwu_18> bookings = daoImpl.getBookingsByUserId(user_id);
+		String user_name = daoImpl.getUserNameById(user_id);
+		model.addAttribute("bookings", bookings);
+		model.addAttribute("userName", user_name);
+		return "showBookings";
+		
+	} 
+	
+	
+	@GetMapping("/showBookings")
+	public String showBookings(@RequestParam(required = true) int user_id, Model model) {
+		List<Booking_cwu_18> bookings = daoImpl.getBookingsByUserId(user_id);
+		model.addAttribute("bookings", bookings);
+		return "showBookings";
+	}
+	
+	@ModelAttribute("title")
+	public List<String> initialzeTitle(){
+		List<String> title = new ArrayList<String>();
+		title.add("Group Study");
+		title.add("Meeting");
+		title.add("Seminar");
+		title.add("Workshop");
+		title.add("Activity");
+		return title;
 	}
 		
 	//Login feature
@@ -59,12 +102,14 @@ public class Controller_cwu_18 {
 		if (result.hasErrors()) {
 			return "login_epe_07";
 		}
-		if(bookingDAOImpl.getUser(login.getEmail(), login.getPassword()) == null) {
+		if(daoImpl.getUser(login.getEmail(), login.getPassword()) == null) {
 			model.addAttribute("message", "Login unsuccessful");
 			return "login_epe_07";
 		}
 		model.addAttribute("successMessage", "Dear " + login.getEmail() + " , Welcome");
 		model.addAttribute("login_epe_07", login);
+		String user_id = daoImpl.getUserIdByEmail(login.getEmail());
+		model.addAttribute("user_id", user_id);
 		//creating session for user successful login
 		session.setAttribute("user", login.getEmail());
 		return "success_epe_07";
@@ -75,5 +120,16 @@ public class Controller_cwu_18 {
 		session.invalidate();
 		//session.setAttribute("user", null);
 		return "redirect:/login_epe_07";
+	}
+	
+	//Random Number Generator
+	public static String getRandomBookingID() {
+	    // It will generate 6 digit random Number.
+	    // from 0 to 999999
+	    Random rnd = new Random();
+	    int number = rnd.nextInt(999999);
+
+	    // this will convert any number sequence into 6 character.
+	    return String.format("%06d", number);
 	}
 }

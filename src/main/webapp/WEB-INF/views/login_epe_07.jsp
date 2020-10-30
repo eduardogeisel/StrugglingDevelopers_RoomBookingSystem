@@ -6,10 +6,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Login</title>
+<link href="<c:url value="/static/css/bootstrap.min.css" />"
+	rel="stylesheet">
+<script src="<c:url value="/static/js/jquery-1.11.1.min.js" />"></script>
+<script src="<c:url value="/static/js/bootstrap.min.js" />"></script>
 </head>
 <body>
 	<h1>Login</h1>
-	<form:form method="POST" action="${pageContext.request.contextPath}/success_epe_07/" modelAttribute="login_epe_07">
+	<form:form method="POST" action="${pageContext.request.contextPath}/success_epe_07" modelAttribute="login_epe_07">
 		<table>
 			<tr>
 				<td><label>Email</label></td>
@@ -18,7 +22,7 @@
 			</tr>
 			<tr>
 				<td><label>Password</label></td>
-				<td><form:input type="text" path="password" id="password" />
+				<td><form:input type="password" path="password" id="password" />
 					<form:errors path="email" style="color:red" /></td>
 			</tr>
 			

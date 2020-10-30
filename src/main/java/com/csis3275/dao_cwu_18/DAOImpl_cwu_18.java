@@ -19,6 +19,11 @@ public class DAOImpl_cwu_18 {
 	JdbcTemplate jdbcTemplate;
 	private final String SQL_GET_ALL = "SELECT * FROM BOOKINGS";
 	
+	//manage Booking feature
+	private final String SQL_INSERT_BOOKING = "INSERT INTO BOOKINGS (booking_id, dateTime, startTime, endTime, title, description, user_id, room_id) VALUES(?,?,?,?,?,?,?,?)";
+	private final String SQL_FIND_BOOKING_BY_USERID = "SELECT * FROM BOOKINGS WHERE USER_ID = ?";
+	private final String SQL_GET_USERNAME_BY_ID = "SELECT FIRST_NAME FROM USERS WHERE USER_ID = ?";
+	private final String SQL_GET_USERID_BY_EMAIL = "SELECT USER_ID FROM USERS WHERE EMAIL = ?";
 	//login feature
 	private final String SQL_GET_EMAIL_PASS = "SELECT EMAIL, PASSWORD FROM USERS";
 	private final String SQL_FIND_USER = "SELECT * FROM USERS WHERE email = ? AND password = ?";
@@ -30,6 +35,24 @@ public class DAOImpl_cwu_18 {
 	
 	public List<Booking_cwu_18> getAllBookings(){
 		return jdbcTemplate.query(SQL_GET_ALL,new BookingMapper_cwu_18());
+	}
+	
+	//insert new booking into database
+	public boolean createBooking(Booking_cwu_18 newBooking) {
+		return jdbcTemplate.update(SQL_INSERT_BOOKING, newBooking.getBooking_id(),newBooking.getDateTime(),
+				newBooking.getStartTime(), newBooking.getEndTime(), newBooking.getTitle(), 
+				newBooking.getDescription(), newBooking.getUser_id(), newBooking.getRoom_id()) > 0;
+	}
+	
+	public List<Booking_cwu_18> getBookingsByUserId(int user_id){
+		return jdbcTemplate.query(SQL_FIND_BOOKING_BY_USERID, new Object[] {user_id},new BookingMapper_cwu_18());
+	}
+	public String getUserIdByEmail(String email){
+		return jdbcTemplate.queryForObject(SQL_GET_USERID_BY_EMAIL, new Object[] {email}, String.class);
+	}
+	
+	public String getUserNameById(int user_id) {
+		return jdbcTemplate.queryForObject(SQL_GET_USERNAME_BY_ID, new Object[] { user_id }, String.class);
 	}
 	
 	//Login activity

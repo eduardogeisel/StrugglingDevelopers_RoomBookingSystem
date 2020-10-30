@@ -1,7 +1,9 @@
 package com.csis3275.model_cwu_18;
 
-import java.sql.Date;
 import java.sql.Time;
+import java.time.LocalTime;
+import java.util.Date;
+
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -9,8 +11,8 @@ public class Booking_cwu_18 {
 
 	private int booking_id;
 	private Date dateTime;
-	private Time startTime;
-	private Time endTime;
+	private LocalTime startTime;
+	private LocalTime endTime;
 	private String title;
 	private String description;
 	private int user_id;
@@ -23,18 +25,18 @@ public class Booking_cwu_18 {
 	public void setBooking_id(int booking_id) {
 		this.booking_id = booking_id;
 	}
-	public Time getStartTime() {
+	public LocalTime getStartTime() {
 		return startTime;
 	}
 	@DateTimeFormat(pattern = "HH:mm")
-	public void setStartTime(Time startTime) {
+	public void setStartTime(LocalTime startTime) {
 		this.startTime = startTime;
 	}
-	public Time getEndTime() {
+	public LocalTime getEndTime() {
 		return endTime;
 	}
 	@DateTimeFormat(pattern = "HH:mm")
-	public void setEndTime(Time endTime) {
+	public void setEndTime(LocalTime endTime) {
 		this.endTime = endTime;
 	}
 	public String getTitle() {
