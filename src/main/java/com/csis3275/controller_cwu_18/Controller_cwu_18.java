@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.csis3275.dao_cwu_18.DAOImpl_cwu_18;
 import com.csis3275.model_cwu_18.Booking_cwu_18;
 import com.csis3275.model_cwu_18.Login_epe_07;
+import com.csis3275.model_cwu_18.Rooms_mjo_56;
 
 
 @Controller
@@ -54,7 +55,7 @@ public class Controller_cwu_18 {
 		model.addAttribute("bookingId", bookingId);
 		return "bookRoom_cwu_18";
 	}
-	@PostMapping("bookRoom")
+	@PostMapping("/bookRoom")
 	public String insertBooking(@RequestParam(required = true) int user_id,@ModelAttribute("booking") Booking_cwu_18 newBooking, Model model) {
 		daoImpl.createBooking(newBooking);
 		List<Booking_cwu_18> bookings = daoImpl.getBookingsByUserId(user_id);
@@ -64,13 +65,22 @@ public class Controller_cwu_18 {
 		return "showBookings";
 		
 	} 
-	/*
+	
+	//Delete data
+	@GetMapping("/deleteBooking")
+	public String deleteBookings(@RequestParam(required = true) int id, Model model ) {
+		daoImpl.deleteBooking(id);
+		List<Booking_cwu_18> bookings = daoImpl.getAllBookings();
+		model.addAttribute("bookings", bookings);
+		return "showBookings";
+	}
+	
 	//Edit data
 		@GetMapping("/editBooking")
-		public String editBooking(@RequestParam(required = true) int id, Model model)	{
+		public String editBooking(@RequestParam(required = true) int booking_id, Model model)	{
 					
 			//Get the student
-			Booking_cwu_18 updatedBooking = daoImpl.getBookingById(id);
+			Booking_cwu_18 updatedBooking = daoImpl.getBookingById(booking_id);
 			model.addAttribute("booking", updatedBooking);
 			
 			return "editBooking";
@@ -85,13 +95,13 @@ public class Controller_cwu_18 {
 			List<Booking_cwu_18> bookings = daoImpl.getAllBookings();
 			model.addAttribute("bookings", bookings);
 		
-			model.addAttribute("message","Edited Booking " + updatedBooking.getId());
+			model.addAttribute("message","Edited Booking " + updatedBooking.getBooking_id());
 			
 			//We are redirecting to show students so that the GETMapping is executed again because our edit did not add the list of students to the model
 			return "showBookings";
 			
 		}
-		*/
+		
 	
 	@GetMapping("/showBookings")
 	public String showBookings(@RequestParam(required = true) int user_id, Model model) {
@@ -120,7 +130,7 @@ public class Controller_cwu_18 {
 		// Show all the rooms
 		@GetMapping("/showRooms")
 		public String showRooms(HttpSession session, Model model) {
-			List<Rooms_mjo_56> rooms = DAOImpl.getAllRooms();
+			List<Rooms_mjo_56> rooms = daoImpl.getAllRooms();
 			model.addAttribute("rooms", rooms);
 			return "showRooms";
 		}
@@ -129,7 +139,7 @@ public class Controller_cwu_18 {
 		public String filterRooms(@ModelAttribute("rooms") Rooms_mjo_56 filteredRoom, @RequestParam String equipment,
 				Model model) {
 
-			List<Rooms_mjo_56> rooms = DAOImpl.getFilteredRooms(equipment);
+			List<Rooms_mjo_56> rooms = daoImpl.getFilteredRooms(equipment);
 			model.addAttribute("rooms", rooms);
 			return "showRooms";
 		}

@@ -23,6 +23,8 @@
 				<td>Date</td>
 				<td>Start Time</td>
 				<td>End Time</td>
+				<td>Edit</td>
+				<td>Delete</td>
 			</tr>
 			<c:forEach var="booking" items="${bookings}">
 				<tr>
@@ -31,6 +33,10 @@
 					<td>${booking.dateTime}</td>
 					<td>${booking.startTime}</td>
 					<td>${booking.endTime}</td>
+					<td><a
+						href="${pageContext.request.contextPath}/editBooking/?id=${booking.booking_id}">Edit</a></td>
+					<td><a
+						href="${pageContext.request.contextPath}/deleteBooking/?id=${booking.booking_id}">Delete</a></td>
 				</tr>
 			</c:forEach>
 			

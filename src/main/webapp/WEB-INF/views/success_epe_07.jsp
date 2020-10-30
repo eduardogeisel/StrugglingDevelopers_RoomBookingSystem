@@ -6,26 +6,39 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Success Page</title>
+<link href="<c:url value="/static/css/bootstrap.min.css" />"
+	rel="stylesheet">
+<script src="<c:url value="/static/js/jquery-1.11.1.min.js" />"></script>
+<script src="<c:url value="/static/js/bootstrap.min.js" />"></script>
 </head>
 <h1>${successMessage}</h1>
 <body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="#">Book Room System</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarNav" aria-controls="navbarNav"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath}/bookRoom/?id=${user_id}">Book Room</a>
+				</li>
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath}/showRooms/">Filter Room</a></li>
+
+			</ul>
+		</div>
+	</nav>
 	<table>
-		<tr>
-			<td><label>email:</label></td>
-			<td>${login_epe_07.email}</td>
-		</tr>
-		<tr>
-			<td><label>password:</label></td>
-			<td>${login_epe_07.password}</td>
-		</tr>
-		<tr>
-		<td><a href="${pageContext.request.contextPath}/bookRoom/?id=${user_id}">Book Room</a></td>
 		
-		</tr>
 		<tr>
-			<td colspan="2"><a href="${pageContext.request.contextPath}/sessionEnd">Logout</a></td>
+			<td colspan="2"><a
+				href="${pageContext.request.contextPath}/sessionEnd">Logout</a></td>
 		</tr>
-		
+
 
 	</table>
 	<!-- user session -->

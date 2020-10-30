@@ -23,9 +23,11 @@ public class DAOImpl_cwu_18 {
 	//manage Booking feature
 	private final String SQL_INSERT_BOOKING = "INSERT INTO BOOKINGS (booking_id, dateTime, startTime, endTime, title, description, user_id, room_id) VALUES(?,?,?,?,?,?,?,?)";
 	private final String SQL_FIND_BOOKING_BY_USERID = "SELECT * FROM BOOKINGS WHERE USER_ID = ?";
+	private final String SQL_FIND_BOOKING_BY_BOOKINGID = "SELECT * FROM BOOKINGS WHERE BOOKING_ID = ?";
 	private final String SQL_GET_USERNAME_BY_ID = "SELECT FIRST_NAME FROM USERS WHERE USER_ID = ?";
 	private final String SQL_GET_USERID_BY_EMAIL = "SELECT USER_ID FROM USERS WHERE EMAIL = ?";
 	private final String SQL_UPDATE_BOOKING = "UPDATE BOOKINGS set booking_id =?, dateTime = ?, startTime = ?, endTime = ?, title = ?, description = ?, user_id = ?, room_id = ? WHERE user_id = ?";
+	private final String SQL_DELETE_BOOKING = "DELETE FROM BOOKINGS WHERE BOOKING_ID = ?";
 	//login feature
 
 	//Bookings
@@ -71,6 +73,15 @@ public class DAOImpl_cwu_18 {
 				newBooking.getTitle(), newBooking.getDescription(), newBooking.getUser_id(), 
 				newBooking.getRoom_id(), newBooking.getUser_id()) > 0;
 	}
+	
+	public Booking_cwu_18 getBookingById(int booking_id) {
+		return jdbcTemplate.queryForObject(SQL_FIND_BOOKING_BY_BOOKINGID, new Object[] {booking_id}, new BookingMapper_cwu_18());
+	}
+	
+	public boolean deleteBooking(int idToDelete) {
+		return jdbcTemplate.update(SQL_DELETE_BOOKING, idToDelete)>0;
+	}
+	
 	
 	// Login activity
 		public List<Login_epe_07> getEmailPassord() {
