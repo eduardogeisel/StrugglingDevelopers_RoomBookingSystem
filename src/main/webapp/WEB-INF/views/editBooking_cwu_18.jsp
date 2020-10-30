@@ -6,24 +6,25 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Book Room</title>
+<title>Edit Booking Room Request</title>
 <link href="<c:url value="/static/css/bootstrap.min.css" />"
 	rel="stylesheet">
 <script src="<c:url value="/static/js/jquery-1.11.1.min.js" />"></script>
 <script src="<c:url value="/static/js/bootstrap.min.js" />"></script>
 </head>
 <body>
-	<div class="container">
-		<h1>Booking Room Form</h1>
+<div class="container">
+		<h1>Edit Booking Room Form</h1>
 		<hr />
+		<h3>Edit Booking</h3>
 
-		<form:form action="${pageContext.request.contextPath}/bookRoom/?id=${user_id}"
+		<form:form action="${pageContext.request.contextPath}/editBooking/?id=${user_id}"
 			cssClass="form-horizontal" method="post" modelAttribute="booking">
 			<div class="form-group">
 				<label for="title" class="col-md-3 controllabel">Title:</label>
 				<div class="col-md-3">
 					<form:select path="title" id="title">
-						<form:option value="">Select Title</form:option>
+						<form:option value="${booking.title}">Select Title</form:option>
 						<form:options items="${title}" />
 					</form:select>
 				</div>
@@ -31,7 +32,7 @@
 			<div class="form-group">
 				<label for="description" class="col-md-3 controllabel">Description:</label>
 				<div class="col-md-6">
-					<textarea class="form-control" id="description" rows="3"></textarea>
+					<textarea value = "${booking.description}" class="form-control" id="description" rows="3"></textarea>
 				</div>
 
 
@@ -39,39 +40,39 @@
 			<div class="form-group">
 				<label for="room_id" class="col-md-3 controllabel">Room ID:</label>
 				<div class="col-md-3">
-					<form:input path="room_id" class="form-control" />
+					<form:input path="room_id" class="form-control" value = "${booking.room_id}"/>
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="dateTime" class="col-2 col-form-label">Date:</label>
 				<div class="col-6">
 					<form:input type="date" 
-						path="dateTime" id="dateTime" />
+						path="dateTime" id="dateTime" value = "${booking.dateTime}"/>
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="startTime" class="col-2 col-form-label">Start Time:</label>
 				<div class="col-6">
 					<form:input class="form-control" type="time" 
-						id="startTime" path="startTime" />
+						id="startTime" path="startTime" value = "${booking.startTime}"/>
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="endTime" class="col-2 col-form-label">End Time:</label>
 				<div class="col-6">
 					<form:input class="form-control" type="time" 
-						id="endTime" path="endTime" />
+						id="endTime" path="endTime" value = "${booking.endTime}"/>
 				</div>
 			</div>
 			<div class="invisible">
 				<div class="col-6">
 					<form:input class="form-control" value="${user_id}"  id="user_id"
-						path="user_id" name = "user_id"/>
+						path="user_id" name = "user_id" />
 				</div>
 			</div>
 			<div class="invisible">
 				<div class="col-6">
-					<form:input class="form-control" value="${bookingId}" id="booking_id"
+					<form:input class="form-control" value = "${booking.booking_id}" id="booking_id"
 						path="booking_id" />
 				</div>
 			</div>
