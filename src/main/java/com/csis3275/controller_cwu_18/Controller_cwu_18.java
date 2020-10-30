@@ -45,9 +45,10 @@ public class Controller_cwu_18 {
 	}*/
 	
 	@GetMapping("/bookRoom")
-	public String bookRoom(@RequestParam(required = true) int user_id, HttpSession session, Model model) {
+	public String bookRoom(HttpSession session, Model model) {
 		//Add userId
-		model.addAttribute("user_id", user_id);
+		String userId = "100029323";
+		model.addAttribute("user_id", userId);
 		//Add bookingId
 		String bookingId = getRandomBookingID();
 		model.addAttribute("bookingId", bookingId);
