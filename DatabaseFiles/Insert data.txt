@@ -1,0 +1,77 @@
+insert into users (user_id, first_name, last_name, email, address, contact_number, password, user_type) values ('100539195', 'Marget', 'Smooth', 'msmooth0@angelfire.com', '11571 Morrow Road', '414-458-8085', 'RZkNGjR3X', 1);
+insert into users (user_id, first_name, last_name, email, address, contact_number, password, user_type) values ('100489724', 'York', 'Potkins', 'ypotkins1@soundcloud.com', '23 Prairie Rose Junction', '744-825-7347', '9SpXXDv1U0fD', 1);
+insert into users (user_id, first_name, last_name, email, address, contact_number, password, user_type) values ('100231584', 'Derry', 'Magson', 'dmagson2@mit.edu', '38881 Loomis Pass', '903-959-2132', 'YjxuPr39', 1);
+insert into users (user_id, first_name, last_name, email, address, contact_number, password, user_type) values ('100200602', 'Elva', 'Surcombe', 'esurcombe3@amazon.de', '77 Waxwing Hill', '245-423-4429', 'RhpJeYK', 1);
+insert into users (user_id, first_name, last_name, email, address, contact_number, password, user_type) values ('100784596', 'Kaye', 'Coales', 'kcoales4@drupal.org', '7 American Point', '429-831-9783', 'dSHn93OCt', 1);
+insert into users (user_id, first_name, last_name, email, address, contact_number, password, user_type) values ('100365660', 'Valentin', 'Abrahamian', 'vabrahamian5@cnn.com', '63 Dunning Lane', '366-693-9822', 'd575ppglEz', 1);
+insert into users (user_id, first_name, last_name, email, address, contact_number, password, user_type) values ('100461065', 'Hasty', 'Willcot', 'hwillcot6@dedecms.com', '11 Moulton Street', '540-656-4057', 'IcFV9v', 2);
+insert into users (user_id, first_name, last_name, email, address, contact_number, password, user_type) values ('200912012', 'Giraldo', 'Slee', 'gslee7@wufoo.com', '7417 Surrey Parkway', '871-262-7120', 'mHQkBDT3eF', 2);
+insert into users (user_id, first_name, last_name, email, address, contact_number, password, user_type) values ('100596085', 'Carlie', 'Old', 'cold8@skyrock.com', '5682 Oriole Place', '908-397-3281', 'keYvkKXCT', 1);
+insert into users (user_id, first_name, last_name, email, address, contact_number, password, user_type) values ('200331276', 'Ardith', 'Grayham', 'agrayham9@skyrock.com', '212 Hovde Plaza', '601-818-9120', 'JOdR2Uf0RIDI', 2);
+insert into users (user_id, first_name, last_name, email, address, contact_number, password, user_type) values ('100029323', 'Enoch', 'Takis', 'etakisa@shutterfly.com', '76 Caliangt Avenue', '944-659-1252', 'NBDhya6k', 1);
+insert into users (user_id, first_name, last_name, email, address, contact_number, password, user_type) values ('100829232', 'Nomi', 'Kettley', 'nkettleyb@plala.or.jp', '84307 Fisk Avenue', '273-985-4074', 'jGDvtrF2o', 1);
+insert into users (user_id, first_name, last_name, email, address, contact_number, password, user_type) values ('100181886', 'Aime', 'Scourgie', 'ascourgiec@geocities.com', '98313 Debra Way', '411-786-2586', 'wzQeSnVWs2NQ', 1);
+insert into users (user_id, first_name, last_name, email, address, contact_number, password, user_type) values ('200847426', 'Montgomery', 'Dougher', 'mdougherd@scribd.com', '392 Merchant Terrace', '363-209-4898', 'Z9Tqkoj9fHGe', 2);
+insert into users (user_id, first_name, last_name, email, address, contact_number, password, user_type) values ('200220766', 'Hermy', 'Penniell', 'hpennielle@cloudflare.com', '446 Warbler Crossing', '269-108-1460', 'uOjTvHkumqd', 2);
+insert into users (user_id, first_name, last_name, email, address, contact_number, password, user_type) values ('100897307', 'Blinnie', 'Goodlet', 'bgoodletf@prweb.com', '1657 Holmberg Junction', '257-590-9452', 'sMkmLQwkYKvR', 1);
+insert into users (user_id, first_name, last_name, email, address, contact_number, password, user_type) values ('200201422', 'Shannah', 'Peris', 'sperisg@bravesites.com', '9240 Warbler Road', '161-353-6793', 'hdl7pomryExq', 2);
+insert into users (user_id, first_name, last_name, email, address, contact_number, password, user_type) values ('200919463', 'Albertine', 'Yanele', 'ayaneleh@census.gov', '71053 Dennis Lane', '292-642-3209', 'mlidFSl1U5JR', 2);
+insert into users (user_id, first_name, last_name, email, address, contact_number, password, user_type) values ('200170724', 'Joela', 'Beck', 'jbecki@reuters.com', '2 Bartillon Avenue', '437-967-2294', 'Oa790rT', 2);
+insert into users (user_id, first_name, last_name, email, address, contact_number, password, user_type) values ('200190187', 'Giles', 'Flipsen', 'gflipsenj@washington.edu', '642 Aberg Street', '508-372-8635', 'JRrF7PCuW7', 2);
+
+
+
+
+
+insert into Rooms (room_id, room_type, capacity, equipment) values ('D0953', 'Lab', 30, 'Scanner, Printer');
+insert into Rooms (room_id, room_type, capacity, equipment) values ('D0803', 'Lab', 30, 'Projector, Scanner, Printer');
+insert into Rooms (room_id, room_type, capacity, equipment) values ('D0323', 'Class', 45, 'Camera, Projector, Laptop');
+insert into Rooms (room_id, room_type, capacity, equipment) values ('D0345', 'Class', 45, 'Printer, Scanner');
+insert into Rooms (room_id, room_type, capacity, equipment) values ('D0545', 'Conference', 10, 'Projector');
+insert into Rooms (room_id, room_type, capacity, equipment) values ('D0549', 'Class', 45, 'Printer');
+insert into Rooms (room_id, room_type, capacity, equipment) values ('D0740', 'Conference', 5, 'Printer, Projector, Laptop');
+insert into Rooms (room_id, room_type, capacity, equipment) values ('D0068', 'Class', 45, 'Projector, Laptop');
+insert into Rooms (room_id, room_type, capacity, equipment) values ('D0337', 'Lab', 30, 'Printer');
+insert into Rooms (room_id, room_type, capacity, equipment) values ('D0777', 'Class', 45, 'Printer, Scanner, Laptop');
+insert into Rooms (room_id, room_type, capacity, equipment) values ('D0864', 'Study', 5, 'Laptop, Printer');
+insert into Rooms (room_id, room_type, capacity, equipment) values ('D0391', 'Study', 5, 'Laptop, Printer');
+insert into Rooms (room_id, room_type, capacity, equipment) values ('D0836', 'Class', 45, 'Laptop, Printer, Scanner');
+insert into Rooms (room_id, room_type, capacity, equipment) values ('D0629', 'Conference', 10, 'Projector, Laptop');
+insert into Rooms (room_id, room_type, capacity, equipment) values ('D0367', 'Lab', 30, 'Scanner, Printer');
+insert into Rooms (room_id, room_type, capacity, equipment) values ('D0825', 'Lab', 30, 'Scanner, Printer');
+insert into Rooms (room_id, room_type, capacity, equipment) values ('D0083', 'Study', 5, 'Printer');
+insert into Rooms (room_id, room_type, capacity, equipment) values ('D0096', 'Class', 45, 'Laptop, Projector');
+insert into Rooms (room_id, room_type, capacity, equipment) values ('D0664', 'Class', 45, 'Camera, Laptop, Projector');
+insert into Rooms (room_id, room_type, capacity, equipment) values ('D0007', 'Study', 5, 'Printer');
+
+
+insert into bookings (booking_id, dateTime, startTime, endTime, title, description, user_id, room_id) values (855772, '2020-09-29', '15:00', '17:00', 'Meeting', 'eget nunc donec quis orci eget orci', '100539195', 'D0953');
+insert into bookings (booking_id, dateTime, startTime, endTime, title, description, user_id, room_id) values (177157, '2020-09-10', '16:30', '18:30', 'Seminar', 'faucibus cursus urna ut tellus nulla ut erat id mauris vulputate', '100489724', 'D0803');
+insert into bookings (booking_id, dateTime, startTime, endTime, title, description, user_id, room_id) values (087568, '2020-10-03', '16:00', '18:00', 'Meeting', 'vitae nisl aenean lectus pellentesque eget nunc donec quis orci', '100539195', 'D0323');
+insert into bookings (booking_id, dateTime, startTime, endTime, title, description, user_id, room_id) values (943452, '2020-09-14', '13:30', '15:30', 'Seminar', 'quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis', '100231584', 'D0345');
+insert into bookings (booking_id, dateTime, startTime, endTime, title, description, user_id, room_id) values (793214, '2020-12-19', '16:00', '18:00', 'Meeting', 'mi nulla ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem', '100200602', 'D0545');
+insert into bookings (booking_id, dateTime, startTime, endTime, title, description, user_id, room_id) values (302833, '2020-10-06', '12:00', '14:00', 'Seminar', 'vestibulum rutrum rutrum neque aenean auctor gravida sem praesent id massa', '100784596', 'D0549');
+insert into bookings (booking_id, dateTime, startTime, endTime, title, description, user_id, room_id) values (289370, '2020-12-09', '11:00', '13:00', 'Group Study', 'posuere cubilia curae nulla dapibus dolor vel', '100365660', 'D0740');
+insert into bookings (booking_id, dateTime, startTime, endTime, title, description, user_id, room_id) values (236703, '2020-12-02', '10:00', '12:00', 'Group Study', 'condimentum id luctus nec molestie', '100461065', 'D0068');
+insert into bookings (booking_id, dateTime, startTime, endTime, title, description, user_id, room_id) values (178001, '2020-10-14', '17:00', '19:00', 'Group Study', 'diam in magna bibendum imperdiet nullam', '100461065', 'D0337');
+insert into bookings (booking_id, dateTime, startTime, endTime, title, description, user_id, room_id) values (666077, '2020-11-22', '11:00', '13:00', 'Seminar', 'sem praesent id massa id', '100596085', 'D0777');
+insert into bookings (booking_id, dateTime, startTime, endTime, title, description, user_id, room_id) values (915444, '2020-09-28', '12:00', '14:00', 'Seminar', 'posuere metus vitae ipsum aliquam non', '200331276', 'D0864');
+insert into bookings (booking_id, dateTime, startTime, endTime, title, description, user_id, room_id) values (838413, '2020-10-07', '19:30', '21:30', 'Group Study', 'eget tempus vel pede morbi', '100029323', 'D0391');
+insert into bookings (booking_id, dateTime, startTime, endTime, title, description, user_id, room_id) values (971992, '2020-09-13', '14:00', '16:00', 'Seminar', 'neque vestibulum eget vulputate ut ultrices vel augue vestibulum ante', '100829232', 'D0836');
+insert into bookings (booking_id, dateTime, startTime, endTime, title, description, user_id, room_id) values (355295, '2020-09-28', '11:00', '13:00', 'Seminar', 'eleifend donec ut dolor morbi vel lectus in quam', '100181886', 'D0629');
+insert into bookings (booking_id, dateTime, startTime, endTime, title, description, user_id, room_id) values (633578, '2020-11-01', '18:00', '20:00', 'Workshop', 'luctus cum sociis natoque penatibus et', '200847426', 'D0367');
+insert into bookings (booking_id, dateTime, startTime, endTime, title, description, user_id, room_id) values (174103, '2020-11-29', '9:00', '11:00', 'Workshop', 'blandit ultrices enim lorem ipsum dolor sit amet', '200220766', 'D0825');
+insert into bookings (booking_id, dateTime, startTime, endTime, title, description, user_id, room_id) values (117929, '2020-09-29', '8:00', '10:00', 'Seminar', 'ligula sit amet eleifend pede libero quis orci nullam molestie', '100897307', 'D0083');
+insert into bookings (booking_id, dateTime, startTime, endTime, title, description, user_id, room_id) values (225927, '2020-12-28', '14:00', '16:00', 'Workshop', 'pede posuere nonummy integer non velit donec', '200201422', 'D0096');
+insert into bookings (booking_id, dateTime, startTime, endTime, title, description, user_id, room_id) values (543906, '2020-12-20', '16:00', '18:00', 'Meeting', 'orci mauris lacinia sapien quis libero nullam sit amet turpis elementum', '200919463', 'D0664');
+insert into bookings (booking_id, dateTime, startTime, endTime, title, description, user_id, room_id) values (399653, '2020-11-07', '14:00', '16:00', 'Seminar', 'ornare consequat lectus in est risus auctor', '200170724', 'D0664');
+insert into bookings (booking_id, dateTime, startTime, endTime, title, description, user_id, room_id) values (359065, '2020-11-06', '17:00', '19:00', 'Group Study', 'curae nulla dapibus dolor vel est donec odio justo sollicitudin', '200190187', 'D0664');
+insert into bookings (booking_id, dateTime, startTime, endTime, title, description, user_id, room_id) values (338679, '2020-12-19', '16:00', '18:00', 'Activity', 'phasellus sit amet erat nulla tempus vivamus in', '200190187', 'D0664');
+insert into bookings (booking_id, dateTime, startTime, endTime, title, description, user_id, room_id) values (830029, '2020-12-19', '19:00', '21:00', 'Meeting', 'justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi', '200201422', 'D0337');
+insert into bookings (booking_id, dateTime, startTime, endTime, title, description, user_id, room_id) values (663856, '2020-09-29', '19:30', '21:30', 'Seminar', 'interdum mauris ullamcorper purus sit amet nulla quisque arcu libero rutrum', '100181886', 'D0545');
+insert into bookings (booking_id, dateTime, startTime, endTime, title, description, user_id, room_id) values (949343, '2020-11-12', '11:00', '13:00', 'Group Study', 'tempus vivamus in felis eu', '100029323', 'D0345');
+insert into bookings (booking_id, dateTime, startTime, endTime, title, description, user_id, room_id) values (417550, '2020-10-07', '17:00', '19:00', 'Group Study', 'porttitor id consequat in consequat ut nulla', '100029323', 'D0323');
+insert into bookings (booking_id, dateTime, startTime, endTime, title, description, user_id, room_id) values (725687, '2020-10-11', '8:00', '10:00', 'Meeting', 'aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio', '100365660', 'D0803');
+insert into bookings (booking_id, dateTime, startTime, endTime, title, description, user_id, room_id) values (239717, '2020-10-30', '10:00', '12:00', 'Group Study', 'ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices', '100365660', 'D0953');
+insert into bookings (booking_id, dateTime, startTime, endTime, title, description, user_id, room_id) values (451009, '2020-09-16', '18:30', '20:30', 'Workshop', 'vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec', '100231584', 'D0803');
+insert into bookings (booking_id, dateTime, startTime, endTime, title, description, user_id, room_id) values (307692, '2020-10-02', '9:30', '11:30', 'Workshop', 'integer pede justo lacinia eget tincidunt eget tempus vel pede morbi porttitor lorem', '100231584', 'D0345');
