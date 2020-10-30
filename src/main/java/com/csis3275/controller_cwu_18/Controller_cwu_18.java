@@ -48,24 +48,32 @@ public class Controller_cwu_18 {
 	@GetMapping("/bookRoom")
 	public String bookRoom(HttpSession session, Model model) {
 		//Add userId
-		String userId = "100029323";
-		model.addAttribute("user_id", userId);
+		int user_id = 100029323;
+		model.addAttribute("userId", user_id);
 		//Add bookingId
 		String bookingId = getRandomBookingID();
 		model.addAttribute("bookingId", bookingId);
 		return "bookRoom_cwu_18";
 	}
 	@PostMapping("/bookRoom")
-	public String insertBooking(@RequestParam(required = true) int user_id,@ModelAttribute("booking") Booking_cwu_18 newBooking, Model model) {
+	public String insertBooking(@ModelAttribute("booking") Booking_cwu_18 newBooking, Model model) {
 		daoImpl.createBooking(newBooking);
-		List<Booking_cwu_18> bookings = daoImpl.getBookingsByUserId(user_id);
-		String user_name = daoImpl.getUserNameById(user_id);
+		int userId = newBooking.getUser_id();
+		List<Booking_cwu_18> bookings = daoImpl.getBookingsByUserId(userId);
+		String user_name = daoImpl.getUserNameById(userId);
 		model.addAttribute("bookings", bookings);
 		model.addAttribute("userName", user_name);
 		return "showBookings";
 		
 	} 
 	
+	@GetMapping("/showBookings")
+	public String showBookings(@RequestParam(required = true) int user_id, Model model) {
+		List<Booking_cwu_18> bookings = daoImpl.getBookingsByUserId(user_id);
+		model.addAttribute("bookings", bookings);
+		return "showBookings";
+	}
+	/*
 	//Delete data
 	@GetMapping("/deleteBooking")
 	public String deleteBookings(@RequestParam(required = true) int id, Model model ) {
@@ -102,13 +110,8 @@ public class Controller_cwu_18 {
 			
 		}
 		
+	*/
 	
-	@GetMapping("/showBookings")
-	public String showBookings(@RequestParam(required = true) int user_id, Model model) {
-		List<Booking_cwu_18> bookings = daoImpl.getBookingsByUserId(user_id);
-		model.addAttribute("bookings", bookings);
-		return "showBookings";
-	}
 	
 	@ModelAttribute("title")
 	public List<String> initialzeTitle(){

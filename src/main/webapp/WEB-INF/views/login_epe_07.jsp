@@ -31,6 +31,7 @@
 			</tr>
 				
 		</table>
+		<a href="${pageContext.request.contextPath}/signUp/">Don't have an account?</a>
 	</form:form>
 	<c:if test="${ message != null }" >
 				<div class="alert alert-success" role="alert">${message}</div>

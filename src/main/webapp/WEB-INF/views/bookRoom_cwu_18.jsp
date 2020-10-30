@@ -17,7 +17,7 @@
 		<h1>Booking Room Form</h1>
 		<hr />
 
-		<form:form action="${pageContext.request.contextPath}/bookRoom/?id=${user_id}"
+		<form:form action="${pageContext.request.contextPath}/bookRoom/?id=${userId}"
 			cssClass="form-horizontal" method="post" modelAttribute="booking">
 			<div class="form-group">
 				<label for="title" class="col-md-3 controllabel">Title:</label>
@@ -65,8 +65,8 @@
 			</div>
 			<div class="invisible">
 				<div class="col-6">
-					<form:input class="form-control" value="${user_id}"  id="user_id"
-						path="user_id" name = "user_id"/>
+					<form:input class="form-control" value="${userId}"  id="user_id"
+						path="user_id" />
 				</div>
 			</div>
 			<div class="invisible">

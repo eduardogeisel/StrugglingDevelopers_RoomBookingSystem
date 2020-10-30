@@ -74,7 +74,7 @@ public class DAOImpl_cwu_18 {
 	}
 	
 	public Booking_cwu_18 getBookingById(int booking_id) {
-		return jdbcTemplate.queryForObject(SQL_FIND_BOOKING_BY_BOOKINGID, new Object[] {booking_id}, new BookingMapper_cwu_18());
+		return jdbcTemplate.queryForObject(SQL_FIND_BOOKING_BY_BOOKINGID,new Object[] {booking_id},new BookingMapper_cwu_18());
 	}
 	
 	public boolean deleteBooking(int idToDelete) {
