@@ -18,6 +18,8 @@ import com.csis3275.model_cwu_18.Rooms_mjo_56;
 public class DAOImpl_cwu_18 {
 
 	JdbcTemplate jdbcTemplate;
+	
+	//Bookings
 	private final String SQL_GET_ALL = "SELECT * FROM BOOKINGS";
 
 	// Filter feature
