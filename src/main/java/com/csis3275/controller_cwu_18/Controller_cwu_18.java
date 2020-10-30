@@ -110,6 +110,30 @@ public class Controller_cwu_18 {
 		title.add("Activity");
 		return title;
 	}
+	
+	// Filter feature
+		@ModelAttribute("rooms")
+		public Rooms_mjo_56 setUpRoomForm() {
+			return new Rooms_mjo_56();
+		}
+
+		// Show all the rooms
+		@GetMapping("/showRooms")
+		public String showRooms(HttpSession session, Model model) {
+			List<Rooms_mjo_56> rooms = DAOImpl.getAllRooms();
+			model.addAttribute("rooms", rooms);
+			return "showRooms";
+		}
+
+		@PostMapping("/filterRooms")
+		public String filterRooms(@ModelAttribute("rooms") Rooms_mjo_56 filteredRoom, @RequestParam String equipment,
+				Model model) {
+
+			List<Rooms_mjo_56> rooms = DAOImpl.getFilteredRooms(equipment);
+			model.addAttribute("rooms", rooms);
+			return "showRooms";
+		}
+
 		
 	//Login feature
 	@ModelAttribute("login_epe_07")
