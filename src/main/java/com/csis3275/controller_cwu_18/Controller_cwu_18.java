@@ -26,7 +26,7 @@ import com.csis3275.model_cwu_18.Rooms_mjo_56;
 public class Controller_cwu_18 {
 
 	@Autowired
-	DAOImpl_cwu_18 bookingDAOImpl;
+	DAOImpl_cwu_18 DAOImpl;
 
 	@ModelAttribute("booking")
 	public Booking_cwu_18 setUpAddForm() {
@@ -35,7 +35,7 @@ public class Controller_cwu_18 {
 
 	@GetMapping("/showBookings")
 	public String showBookings(HttpSession session, Model model) {
-		List<Booking_cwu_18> bookings = bookingDAOImpl.getAllBookings();
+		List<Booking_cwu_18> bookings = DAOImpl.getAllBookings();
 		model.addAttribute("bookings", bookings);
 		return "showBookings";
 	}
@@ -49,7 +49,7 @@ public class Controller_cwu_18 {
 	// Show all the rooms
 	@GetMapping("/showRooms")
 	public String showRooms(HttpSession session, Model model) {
-		List<Rooms_mjo_56> rooms = bookingDAOImpl.getAllRooms();
+		List<Rooms_mjo_56> rooms = DAOImpl.getAllRooms();
 		model.addAttribute("rooms", rooms);
 		return "showRooms";
 	}
@@ -58,7 +58,7 @@ public class Controller_cwu_18 {
 	public String filterRooms(@ModelAttribute("rooms") Rooms_mjo_56 filteredRoom, @RequestParam String equipment,
 			Model model) {
 
-		List<Rooms_mjo_56> rooms = bookingDAOImpl.getFilteredRooms(equipment);
+		List<Rooms_mjo_56> rooms = DAOImpl.getFilteredRooms(equipment);
 		model.addAttribute("rooms", rooms);
 		return "showRooms";
 	}
@@ -83,7 +83,7 @@ public class Controller_cwu_18 {
 		if (result.hasErrors()) {
 			return "login_epe_07";
 		}
-		if (bookingDAOImpl.getUser(login.getEmail(), login.getPassword()) == null) {
+		if (DAOImpl.getUser(login.getEmail(), login.getPassword()) == null) {
 			model.addAttribute("message", "Login unsuccessful");
 			return "login_epe_07";
 		}
