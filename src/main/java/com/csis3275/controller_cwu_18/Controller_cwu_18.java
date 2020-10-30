@@ -64,7 +64,34 @@ public class Controller_cwu_18 {
 		return "showBookings";
 		
 	} 
-	
+	/*
+	//Edit data
+		@GetMapping("/editBooking")
+		public String editBooking(@RequestParam(required = true) int id, Model model)	{
+					
+			//Get the student
+			Booking_cwu_18 updatedBooking = daoImpl.getBookingById(id);
+			model.addAttribute("booking", updatedBooking);
+			
+			return "editBooking";
+		}
+		
+		@PostMapping("/editBooking")
+		public String updateBooking(@ModelAttribute("booking") Booking_cwu_18 updatedBooking, Model model)	{
+			
+			daoImpl.updateBooking(updatedBooking);
+			
+			//Get a list of students from the controller
+			List<Booking_cwu_18> bookings = daoImpl.getAllBookings();
+			model.addAttribute("bookings", bookings);
+		
+			model.addAttribute("message","Edited Booking " + updatedBooking.getId());
+			
+			//We are redirecting to show students so that the GETMapping is executed again because our edit did not add the list of students to the model
+			return "showBookings";
+			
+		}
+		*/
 	
 	@GetMapping("/showBookings")
 	public String showBookings(@RequestParam(required = true) int user_id, Model model) {

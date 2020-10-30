@@ -24,6 +24,7 @@ public class DAOImpl_cwu_18 {
 	private final String SQL_FIND_BOOKING_BY_USERID = "SELECT * FROM BOOKINGS WHERE USER_ID = ?";
 	private final String SQL_GET_USERNAME_BY_ID = "SELECT FIRST_NAME FROM USERS WHERE USER_ID = ?";
 	private final String SQL_GET_USERID_BY_EMAIL = "SELECT USER_ID FROM USERS WHERE EMAIL = ?";
+	private final String SQL_UPDATE_BOOKING = "UPDATE BOOKINGS set booking_id =?, dateTime = ?, startTime = ?, endTime = ?, title = ?, description = ?, user_id = ?, room_id = ? WHERE user_id = ?";
 	//login feature
 	private final String SQL_GET_EMAIL_PASS = "SELECT EMAIL, PASSWORD FROM USERS";
 	private final String SQL_FIND_USER = "SELECT * FROM USERS WHERE email = ? AND password = ?";
@@ -53,6 +54,12 @@ public class DAOImpl_cwu_18 {
 	
 	public String getUserNameById(int user_id) {
 		return jdbcTemplate.queryForObject(SQL_GET_USERNAME_BY_ID, new Object[] { user_id }, String.class);
+	}
+	public boolean updateBooking(Booking_cwu_18 newBooking) {
+		return jdbcTemplate.update(SQL_UPDATE_BOOKING, newBooking.getBooking_id(), 
+				newBooking.getDateTime(), newBooking.getStartTime(), newBooking.getEndTime(),
+				newBooking.getTitle(), newBooking.getDescription(), newBooking.getUser_id(), 
+				newBooking.getRoom_id(), newBooking.getUser_id()) > 0;
 	}
 	
 	//Login activity
