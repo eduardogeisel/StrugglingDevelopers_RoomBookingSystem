@@ -1,0 +1,7 @@
+> user_type in Users table:
+1 = student
+2 = faculty
+
+> We will store 1 contact number and 1 email id for a user, not multiple.
+
+> This data has been put together for testing purpose only.
