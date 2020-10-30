@@ -35,8 +35,7 @@ public class DAOImpl_cwu_18 {
 
 	// Filter feature
 	private final String SQL_GET_ROOMS = "SELECT * FROM ROOMS";
-	private final String SQL_FILTER_ROOMS = "SELECT ROOM_ID, ROOM_TYPE, CAPACITY, EQUIPMENT FROM ROOMS WHERE EQUIPMENT LIKE '%?%' OR EQUIPMENT LIKE '%?' OR EQUIPMENT LIKE '?%' OR EQUIPMENT LIKE '?' ";
-
+	private final String SQL_FILTER_ROOMS = "SELECT ROOM_ID, ROOM_TYPE, CAPACITY, EQUIPMENT FROM ROOMS WHERE EQUIPMENT ~* ? ";
 	// login feature
 	private final String SQL_GET_EMAIL_PASS = "SELECT EMAIL, PASSWORD FROM USERS";
 	private final String SQL_FIND_USER = "SELECT * FROM USERS WHERE email = ? AND password = ?";
