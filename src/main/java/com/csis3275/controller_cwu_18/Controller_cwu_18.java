@@ -43,7 +43,7 @@ public class Controller_cwu_18 {
 	@GetMapping("/bookRoom")
 	public String bookRoom(HttpSession session, Model model) {
 		// Add userId
-		int userId = 100029323;
+		int userId = 200774284;
 		model.addAttribute("userId", userId);
 		// Add bookingId
 		String bookingId = getRandomBookingID();
