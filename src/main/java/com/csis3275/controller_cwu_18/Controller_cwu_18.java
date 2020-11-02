@@ -48,8 +48,8 @@ public class Controller_cwu_18 {
 	@GetMapping("/bookRoom")
 	public String bookRoom(HttpSession session, Model model) {
 		//Add userId
-		int user_id = 100029323;
-		model.addAttribute("userId", user_id);
+		int userId = 100029323;
+		model.addAttribute("userId", userId);
 		//Add bookingId
 		String bookingId = getRandomBookingID();
 		model.addAttribute("bookingId", bookingId);
@@ -63,13 +63,14 @@ public class Controller_cwu_18 {
 		String user_name = daoImpl.getUserNameById(userId);
 		model.addAttribute("bookings", bookings);
 		model.addAttribute("userName", user_name);
+		System.out.print(userId);
 		return "showBookings";
 		
 	} 
 	
 	@GetMapping("/showBookings")
-	public String showBookings(@RequestParam(required = true) int user_id, Model model) {
-		List<Booking_cwu_18> bookings = daoImpl.getBookingsByUserId(user_id);
+	public String showBookings(@RequestParam(required = true) int userId, Model model) {
+		List<Booking_cwu_18> bookings = daoImpl.getBookingsByUserId(userId);
 		model.addAttribute("bookings", bookings);
 		return "showBookings";
 	}
