@@ -13,6 +13,8 @@ import com.csis3275.model_cwu_18.LoginMapper_epe_07;
 import com.csis3275.model_cwu_18.Login_epe_07;
 import com.csis3275.model_cwu_18.RoomsMapper_mjo_56;
 import com.csis3275.model_cwu_18.Rooms_mjo_56;
+import com.csis3275.model_cwu_18.UserMapper_sho_38;
+import com.csis3275.model_cwu_18.User_sho_38;
 
 @Component
 public class DAOImpl_cwu_18 {
@@ -29,6 +31,10 @@ public class DAOImpl_cwu_18 {
 	private final String SQL_GET_EMAIL_PASS = "SELECT EMAIL, PASSWORD FROM USERS";
 	private final String SQL_FIND_USER = "SELECT * FROM USERS WHERE email = ? AND password = ?";
 
+	// sign up feature
+		private final String SQL_CREATE_USER = "INSERT INTO USERS (user_id,first_name,last_name,email,address,"
+				+ "contact_number,password,user_type) VALUES (?,?,?,?,?,?,?,?)";
+		private final String SQL_FIND_REGISTERED_USER = "SELECT * FROM USERS WHERE email = ?";
 	@Autowired
 	public DAOImpl_cwu_18(DataSource dataSource) {
 		jdbcTemplate = new JdbcTemplate(dataSource);
@@ -66,4 +72,24 @@ public class DAOImpl_cwu_18 {
 			return null;
 		}
 	}
+	
+	// sign up activity
+		public void register(User_sho_38 newUser) {
+
+			jdbcTemplate.update(SQL_CREATE_USER, newUser.getUser_id(), newUser.getFirst_name(), newUser.getLast_name(),
+					newUser.getEmail(), newUser.getPassword(), newUser.getUser_type(), newUser.getAddress(),
+					newUser.getContact_number());
+
+		}
+
+		public User_sho_38 findUser(String email) {
+
+			List<User_sho_38> strLst = jdbcTemplate.query(SQL_FIND_REGISTERED_USER, new UserMapper_sho_38(), email);
+
+			if (strLst.size() == 1) {
+				return strLst.get(0);
+			} else {
+				return null;
+			}
+		}
 }
