@@ -2,6 +2,7 @@ package com.csis3275.controller_cwu_18;
 
 import java.sql.Time;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -212,17 +213,42 @@ public class Controller_cwu_18 {
 		}
 
 		@GetMapping("/register_sho_38")
-		public String showRegister(HttpSession session,User_sho_38 newUser, Model model) {
-			model.addAttribute("newUser", new User_sho_38());
+		public String showRegister(HttpSession session,Model model) {
 
 			return "register_sho_38";
 		}
 
-		@PostMapping("/registerProcess")
+		@PostMapping("/register_sho_38")
 		public String addNewUser(HttpSession session, User_sho_38 newUser, Model model) {
-			daoImpl.register(newUser);
+			List<String> emailList = daoImpl.getAllEmails();
+			String compareEmail = newUser.getEmail();
+			if(emailList.contains(compareEmail)) {
+				String failureMessage = "Already has the email address: " + compareEmail;
+				model.addAttribute("failureMessage", failureMessage);
+				newUser.setUser_id(generateUserId(newUser));
+				daoImpl.register(newUser);
+			}else {
+				String successMessage = "Successfully Sign Up";
+				model.addAttribute("successMessage", successMessage);
+			}			
+			
+			return "login_epe_07";
 
-			return "welcome_sho_38";
-
+		}
+		
+		public int generateUserId(User_sho_38 user) {
+		
+			int userId = 0;
+			if(user.getUser_type() == 1)
+			{
+				userId =  100000000 + Integer.parseInt(getRandomBookingID());
+		
+			}else if (user.getUser_type() == 2) {
+				userId =  200000000 + Integer.parseInt(getRandomBookingID());
+			
+			}
+			return userId;
+			
+			
 		}
 }

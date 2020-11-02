@@ -13,6 +13,13 @@
 </head>
 <body>
 	<h1>Login</h1>
+	<hr />
+		<c:if test="${ failureMessage !=null }">
+			<div class="alert alert-danger" role="alert">${failureMessage}</div>
+		</c:if>
+		<c:if test="${ successMessage !=null }">
+			<div class="alert alert-success" role="alert">${successMessage}</div>
+		</c:if>
 	<form:form method="POST" action="${pageContext.request.contextPath}/success_epe_07" modelAttribute="login_epe_07">
 		<table>
 			<tr>

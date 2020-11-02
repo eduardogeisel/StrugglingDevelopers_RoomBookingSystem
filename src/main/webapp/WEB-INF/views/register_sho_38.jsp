@@ -13,9 +13,77 @@
 </head>
 <body>
 	<h1>Sign up</h1>
-	<form:form action="${pageContext.request.contextPath}/registerProcess/"
+	
+	<form:form action="${pageContext.request.contextPath}/register_sho_38/"
+			cssClass="form-horizontal" method="post" modelAttribute="user_sho_38">
+			<div class="invisible">
+				<label for="user_id" class="col-md-3 controllabel">User ID</label>
+				<div class="col-md-3">
+					<form:input path="user_id" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="first_name" class="col-md-3 controllabel">First Name</label>
+				<div class="col-md-3">
+					<form:input path="first_name" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="last_name" class="col-md-3 controllabel">Last Name</label>
+				<div class="col-md-3">
+					<form:input path="last_name" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="email" class="col-md-3 controllabel">Email </label>
+				<div class="col-md-3">
+					<form:input path="email" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="address" class="col-md-3 controllabel">Address </label>
+				<div class="col-md-3">
+					<form:input path="address" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="contact_number" class="col-md-3 controllabel">Contact Number </label>
+				<div class="col-md-3">
+					<form:input path="contact_number" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="password" class="col-md-3 controllabel">Password </label>
+				<div class="col-md-3">
+					<form:input path="password" class="form-control" />
+				</div>
+			</div>
+		
+			<div class="form-group">
+				<label for="user_type" class="col-md-3 control-label">User Type:</label>
+				<div class="col-md-3">
+					<form:radiobutton path="user_type" value="1" />Faculty <form:radiobutton
+						path="user_type" value="2" />Student <form:errors path="user_type"
+						style="color:red" />
+				</div>
+			</div>
+			<div class="form-group">
+				<!-- Button -->
+				<div class="col-md-offset-3 col-md-9">
+					<form:button cssClass="btn btn-primary">Sign Up</form:button>
+				</div>
+			</div>
+		</form:form>
+	<!-- 
+	
+	<form:form action="${pageContext.request.contextPath}/register_sho_38/"
 		method="POST" modelAttribute="user_sho_38">
 		<table>
+			<tr>
+				<td><label>User ID</label></td>
+				<td><form:input type="number" path="user_id" id="user_id" />
+					<form:errors path="user_id" style="color:red" /></td>
+			</tr>
 			<tr>
 				<td><label>First Name</label></td>
 				<td><form:input type="text" path="first_name" id="first_name" />
@@ -48,18 +116,15 @@
 				<td><form:input type="text" path="password" id="password" /> <form:errors
 						path="password" style="color:red" /></td>
 			</tr>
-			<tr>
-				<td><label>User type</label></td>
-				<td><form:select path="user_type" id="user_type">
-						<form:option value="">Select userType</form:option>
-						<form:options items="${user_type}" />
-					</form:select> <form:errors path="user_type" style="color:red" /></td>
-			</tr>
+
 
 			<tr>
 				<td colspan="2"><input type="submit" value="Sign Up"></td>
 			</tr>
 		</table>
 	</form:form>
+	
+	
+	 -->
 </body>
 </html>
