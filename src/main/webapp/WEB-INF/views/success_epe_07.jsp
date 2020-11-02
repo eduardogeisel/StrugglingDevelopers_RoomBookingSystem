@@ -12,6 +12,8 @@
 <script src="<c:url value="/static/js/bootstrap.min.js" />"></script>
 </head>
 <h1>${successMessage}</h1>
+<h2>${user.first_name}</h2>
+<h2>${user.email}</h2>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<a class="navbar-brand" href="#">Book Room System</a>
@@ -24,7 +26,7 @@
 			<ul class="navbar-nav">
 
 				<li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath}/bookRoom/?id=${user_id}">Book Room</a>
+					href="${pageContext.request.contextPath}/bookRoom/?id=${user.user_id}">Book Room</a>
 				</li>
 				<li class="nav-item"><a class="nav-link"
 					href="${pageContext.request.contextPath}/showRooms/">Filter Room</a></li>
@@ -42,6 +44,6 @@
 
 	</table>
 	<!-- user session -->
-	<h4>${user}</h4>
+	<h4>${email}</h4>
 </body>
 </html>

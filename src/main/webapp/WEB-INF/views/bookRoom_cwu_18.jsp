@@ -17,7 +17,7 @@
 		<h1>Booking Room Form</h1>
 		<hr />
 
-		<form:form action="${pageContext.request.contextPath}/bookRoom/?id=${userId}"
+		<form:form action="${pageContext.request.contextPath}/showBookings/?id=${userId}"
 			cssClass="form-horizontal" method="post" modelAttribute="booking">
 			<div class="form-group">
 				<label for="title" class="col-md-3 controllabel">Title:</label>

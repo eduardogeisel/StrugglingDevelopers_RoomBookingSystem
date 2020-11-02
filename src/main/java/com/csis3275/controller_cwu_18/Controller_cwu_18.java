@@ -23,6 +23,7 @@ import com.csis3275.dao_cwu_18.DAOImpl_cwu_18;
 import com.csis3275.model_cwu_18.Booking_cwu_18;
 import com.csis3275.model_cwu_18.Login_epe_07;
 import com.csis3275.model_cwu_18.Rooms_mjo_56;
+import com.csis3275.model_cwu_18.User_cwu_18;
 
 
 @Controller
@@ -40,17 +41,23 @@ public class Controller_cwu_18 {
 	
 	
 	@GetMapping("/bookRoom")
-	public String bookRoom(@RequestParam(required = true) int userId, Model model) {
+	public String bookRoom(HttpSession session, Model model) {
 		//Add userId
-		//int userId = 100029323;
+		int userId = 100029323;
 		model.addAttribute("userId", userId);
-		System.out.print("Test User ID:-------"+ userId);
 		//Add bookingId
 		String bookingId = getRandomBookingID();
 		model.addAttribute("bookingId", bookingId);
 		return "bookRoom_cwu_18";
 	}
-	@PostMapping("/bookRoom")
+	
+	@GetMapping("/showBookings")
+	public String showBookings(@RequestParam(required = true) int user_id, Model model) {
+		List<Booking_cwu_18> bookings = daoImpl.getBookingsByUserId(user_id);
+		model.addAttribute("bookings", bookings);
+		return "showBookings";
+	}
+	@PostMapping("/showBookings")
 	public String insertBooking(@ModelAttribute("booking") Booking_cwu_18 newBooking, Model model) {
 		daoImpl.createBooking(newBooking);
 		int userId = newBooking.getUser_id();
@@ -58,17 +65,13 @@ public class Controller_cwu_18 {
 		String user_name = daoImpl.getUserNameById(userId);
 		model.addAttribute("bookings", bookings);
 		model.addAttribute("userName", user_name);
+		
+		User_cwu_18 user = daoImpl.getUserById(userId);
+		model.addAttribute("user", user);
 		System.out.print(userId);
 		return "showBookings";
 		
 	} 
-	
-	@GetMapping("/showBookings")
-	public String showBookings(@RequestParam(required = true) int userId, Model model) {
-		List<Booking_cwu_18> bookings = daoImpl.getBookingsByUserId(userId);
-		model.addAttribute("bookings", bookings);
-		return "showBookings";
-	}
 	
 	//Delete data
 	@GetMapping("/deleteBooking")
@@ -112,6 +115,14 @@ public class Controller_cwu_18 {
 		title.add("Workshop");
 		title.add("Activity");
 		return title;
+	}
+	
+	@ModelAttribute("rooms")
+	public List<String> initialzeRooms(){
+		List<String> rooms = new ArrayList<String>();
+		List<Rooms_mjo_56> roomObject = daoImpl.getAllRooms();
+		
+		return rooms;
 	}
 	
 	// Filter feature
@@ -163,11 +174,16 @@ public class Controller_cwu_18 {
 		}
 		model.addAttribute("successMessage", "Dear " + login.getEmail() + " , Welcome");
 		model.addAttribute("login_epe_07", login);
-		String user_id = daoImpl.getUserIdByEmail(login.getEmail());
-		model.addAttribute("user_id", user_id);
-		System.out.print("Test User ID:-------"+ user_id);
+		
+		User_cwu_18 user = daoImpl.getUserByEmail(login.getEmail());
+		//Add user model
+		model.addAttribute("user", user);
+		int userId = user.getUser_id();
+		model.addAttribute("userId", userId);
+
+		System.out.print("Test User ID:-------"+ userId);
 		//creating session for user successful login
-		session.setAttribute("user", login.getEmail());
+		session.setAttribute("email", login.getEmail());
 		return "success_epe_07";
 	}
 	

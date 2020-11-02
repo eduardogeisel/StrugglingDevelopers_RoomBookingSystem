@@ -13,6 +13,8 @@ import com.csis3275.model_cwu_18.LoginMapper_epe_07;
 import com.csis3275.model_cwu_18.Login_epe_07;
 import com.csis3275.model_cwu_18.RoomsMapper_mjo_56;
 import com.csis3275.model_cwu_18.Rooms_mjo_56;
+import com.csis3275.model_cwu_18.UserMapper_cwu_18;
+import com.csis3275.model_cwu_18.User_cwu_18;
 
 @Component
 public class DAOImpl_cwu_18 {
@@ -28,6 +30,8 @@ public class DAOImpl_cwu_18 {
 	private final String SQL_GET_USERID_BY_EMAIL = "SELECT USER_ID FROM USERS WHERE EMAIL = ?";
 	private final String SQL_UPDATE_BOOKING = "UPDATE BOOKINGS set booking_id =?, dateTime = ?, startTime = ?, endTime = ?, title = ?, description = ?, user_id = ?, room_id = ? WHERE user_id = ?";
 	private final String SQL_DELETE_BOOKING = "DELETE FROM BOOKINGS WHERE BOOKING_ID = ?";
+	private final String SQL_GET_USER_BY_USERID = "SELECT * FROM USERS WHERE USER_ID = ?";
+	private final String SQL_GET_USER_BY_Email = "SELECT * FROM USERS WHERE EMAIL = ?";
 	//login feature
 
 	//Bookings
@@ -59,9 +63,7 @@ public class DAOImpl_cwu_18 {
 	public List<Booking_cwu_18> getBookingsByUserId(int user_id){
 		return jdbcTemplate.query(SQL_FIND_BOOKING_BY_USERID, new Object[] {user_id},new BookingMapper_cwu_18());
 	}
-	public String getUserIdByEmail(String email){
-		return jdbcTemplate.queryForObject(SQL_GET_USERID_BY_EMAIL, new Object[] {email}, String.class);
-	}
+	
 	
 	public String getUserNameById(int user_id) {
 		return jdbcTemplate.queryForObject(SQL_GET_USERNAME_BY_ID, new Object[] { user_id }, String.class);
@@ -79,6 +81,14 @@ public class DAOImpl_cwu_18 {
 	
 	public boolean deleteBooking(int idToDelete) {
 		return jdbcTemplate.update(SQL_DELETE_BOOKING, idToDelete)>0;
+	}
+	
+	public User_cwu_18 getUserById(int user_id) {
+		return jdbcTemplate.queryForObject(SQL_GET_USER_BY_USERID,new Object[] {user_id},new UserMapper_cwu_18());
+	}
+	
+	public User_cwu_18 getUserByEmail(String email) {
+		return jdbcTemplate.queryForObject(SQL_GET_USER_BY_Email,new Object[] {email},new UserMapper_cwu_18());
 	}
 	
 	
