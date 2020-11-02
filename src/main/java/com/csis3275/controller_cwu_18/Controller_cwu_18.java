@@ -38,18 +38,13 @@ public class Controller_cwu_18 {
 		return new Booking_cwu_18();
 	}
 	
-	/*@GetMapping("/showBookings")
-	public String showBookings(HttpSession session, Model model) {
-		List<Booking_cwu_18> bookings = daoImpl.getAllBookings();
-		model.addAttribute("bookings", bookings);
-		return "showBookings";
-	}*/
 	
 	@GetMapping("/bookRoom")
-	public String bookRoom(HttpSession session, Model model) {
+	public String bookRoom(@RequestParam(required = true) int userId, Model model) {
 		//Add userId
-		int userId = 100029323;
+		//int userId = 100029323;
 		model.addAttribute("userId", userId);
+		System.out.print("Test User ID:-------"+ userId);
 		//Add bookingId
 		String bookingId = getRandomBookingID();
 		model.addAttribute("bookingId", bookingId);
@@ -74,11 +69,11 @@ public class Controller_cwu_18 {
 		model.addAttribute("bookings", bookings);
 		return "showBookings";
 	}
-	/*
+	
 	//Delete data
 	@GetMapping("/deleteBooking")
-	public String deleteBookings(@RequestParam(required = true) int id, Model model ) {
-		daoImpl.deleteBooking(id);
+	public String deleteBookings(@RequestParam(required = true) int booking_id, Model model ) {
+		daoImpl.deleteBooking(booking_id);
 		List<Booking_cwu_18> bookings = daoImpl.getAllBookings();
 		model.addAttribute("bookings", bookings);
 		return "showBookings";
@@ -88,31 +83,25 @@ public class Controller_cwu_18 {
 		@GetMapping("/editBooking")
 		public String editBooking(@RequestParam(required = true) int booking_id, Model model)	{
 					
-			//Get the student
 			Booking_cwu_18 updatedBooking = daoImpl.getBookingById(booking_id);
 			model.addAttribute("booking", updatedBooking);
 			
-			return "editBooking";
+			return "editBooking_cwu_18";
 		}
 		
 		@PostMapping("/editBooking")
 		public String updateBooking(@ModelAttribute("booking") Booking_cwu_18 updatedBooking, Model model)	{
 			
 			daoImpl.updateBooking(updatedBooking);
-			
-			//Get a list of students from the controller
 			List<Booking_cwu_18> bookings = daoImpl.getAllBookings();
 			model.addAttribute("bookings", bookings);
 		
 			model.addAttribute("message","Edited Booking " + updatedBooking.getBooking_id());
 			
-			//We are redirecting to show students so that the GETMapping is executed again because our edit did not add the list of students to the model
+		
 			return "showBookings";
 			
 		}
-		
-	*/
-	
 	
 	@ModelAttribute("title")
 	public List<String> initialzeTitle(){
@@ -176,6 +165,7 @@ public class Controller_cwu_18 {
 		model.addAttribute("login_epe_07", login);
 		String user_id = daoImpl.getUserIdByEmail(login.getEmail());
 		model.addAttribute("user_id", user_id);
+		System.out.print("Test User ID:-------"+ user_id);
 		//creating session for user successful login
 		session.setAttribute("user", login.getEmail());
 		return "success_epe_07";

@@ -18,7 +18,7 @@
 		<hr />
 		<h3>Edit Booking</h3>
 
-		<form:form action="${pageContext.request.contextPath}/editBooking/?id=${user_id}"
+		<form:form action="${pageContext.request.contextPath}/editBooking/?id=${booking.booking_id}"
 			cssClass="form-horizontal" method="post" modelAttribute="booking">
 			<div class="form-group">
 				<label for="title" class="col-md-3 controllabel">Title:</label>
@@ -62,18 +62,6 @@
 				<div class="col-6">
 					<form:input class="form-control" type="time" 
 						id="endTime" path="endTime" value = "${booking.endTime}"/>
-				</div>
-			</div>
-			<div class="invisible">
-				<div class="col-6">
-					<form:input class="form-control" value="${user_id}"  id="user_id"
-						path="user_id" name = "user_id" />
-				</div>
-			</div>
-			<div class="invisible">
-				<div class="col-6">
-					<form:input class="form-control" value = "${booking.booking_id}" id="booking_id"
-						path="booking_id" />
 				</div>
 			</div>
 
