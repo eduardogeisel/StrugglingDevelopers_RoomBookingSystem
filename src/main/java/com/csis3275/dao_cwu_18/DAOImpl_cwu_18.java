@@ -133,8 +133,8 @@ public class DAOImpl_cwu_18 {
 	public void register(User_sho_38 newUser) {
 
 		jdbcTemplate.update(SQL_CREATE_USER, newUser.getUser_id(), newUser.getFirst_name(), newUser.getLast_name(),
-				newUser.getEmail(), newUser.getPassword(), newUser.getUser_type(), newUser.getAddress(),
-				newUser.getContact_number());
+				newUser.getEmail(), newUser.getAddress(), newUser.getContact_number(), newUser.getPassword(),
+				newUser.getUser_type());
 
 	}
 
