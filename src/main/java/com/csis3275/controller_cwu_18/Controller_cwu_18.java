@@ -25,6 +25,7 @@ import com.csis3275.model_cwu_18.Login_epe_07;
 import com.csis3275.model_cwu_18.Rooms_mjo_56;
 import com.csis3275.model_cwu_18.User_cwu_18;
 
+import com.csis3275.model_cwu_18.User_sho_38;
 
 @Controller
 public class Controller_cwu_18 {
@@ -204,4 +205,24 @@ public class Controller_cwu_18 {
 	    // this will convert any number sequence into 6 character.
 	    return String.format("%06d", number);
 	}
+	// Sign up feature
+		@ModelAttribute("user_sho_38")
+		public User_sho_38 setUpSignupForm() {
+			return new User_sho_38();
+		}
+
+		@GetMapping("/register_sho_38")
+		public String showRegister(HttpSession session,User_sho_38 newUser, Model model) {
+			model.addAttribute("newUser", new User_sho_38());
+
+			return "register_sho_38";
+		}
+
+		@PostMapping("/registerProcess")
+		public String addNewUser(HttpSession session, User_sho_38 newUser, Model model) {
+			daoImpl.register(newUser);
+
+			return "welcome_sho_38";
+
+		}
 }
