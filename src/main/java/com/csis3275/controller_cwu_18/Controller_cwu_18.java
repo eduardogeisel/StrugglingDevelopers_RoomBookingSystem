@@ -70,7 +70,6 @@ public class Controller_cwu_18 {
 		
 		User_cwu_18 user = daoImpl.getUserById(userId);
 		model.addAttribute("user", user);
-		System.out.print(userId);
 		return "showBookings";
 		
 	} 
@@ -138,7 +137,7 @@ public class Controller_cwu_18 {
 		public String showRooms(HttpSession session, Model model) {
 			List<Rooms_mjo_56> rooms = daoImpl.getAllRooms();
 			model.addAttribute("rooms", rooms);
-			return "showRooms";
+			return "showRooms_mjo_56";
 		}
 
 		@PostMapping("/filterRooms")
@@ -147,7 +146,7 @@ public class Controller_cwu_18 {
 
 			List<Rooms_mjo_56> rooms = daoImpl.getFilteredRooms(equipment);
 			model.addAttribute("rooms", rooms);
-			return "showRooms";
+			return "showRooms_mjo_56";
 		}
 
 		
@@ -183,7 +182,6 @@ public class Controller_cwu_18 {
 		int userId = user.getUser_id();
 		model.addAttribute("userId", userId);
 
-		System.out.print("Test User ID:-------"+ userId);
 		//creating session for user successful login
 		session.setAttribute("email", login.getEmail());
 		return "success_epe_07";
