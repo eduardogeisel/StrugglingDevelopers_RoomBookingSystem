@@ -69,20 +69,16 @@ public class Controller_cwu_18 {
 
 		User_cwu_18 user = daoImpl.getUserById(userId);
 		model.addAttribute("user", user);
-<<<<<<< HEAD
 
 		return "showBookings_cwu_18";
 
 	}
 
-	// Delete data
-=======
-		return "showBookings";
-		
-	} 
+
+
 	
 	//Delete data
->>>>>>> d3f3f7ce728b9792716382185be0e9d7dd40a2c0
+
 	@GetMapping("/deleteBooking")
 	public String deleteBookings(@RequestParam(required = true) int booking_id, Model model) {
 		daoImpl.deleteBooking(booking_id);
@@ -139,15 +135,9 @@ public class Controller_cwu_18 {
 		return new Rooms_mjo_56();
 	}
 
-<<<<<<< HEAD
-	// Show all the rooms
-	@GetMapping("/showRooms")
-	public String showRooms(HttpSession session, Model model) {
-		List<Rooms_mjo_56> rooms = daoImpl.getAllRooms();
-		model.addAttribute("rooms", rooms);
-		return "showRooms";
-	}
-=======
+
+
+
 		// Show all the rooms
 		@GetMapping("/showRooms")
 		public String showRooms(HttpSession session, Model model) {
@@ -155,23 +145,20 @@ public class Controller_cwu_18 {
 			model.addAttribute("rooms", rooms);
 			return "showRooms_mjo_56";
 		}
->>>>>>> d3f3f7ce728b9792716382185be0e9d7dd40a2c0
+
 
 	@PostMapping("/filterRooms")
 	public String filterRooms(@ModelAttribute("rooms") Rooms_mjo_56 filteredRoom, @RequestParam String equipment,
 			Model model) {
 
-<<<<<<< HEAD
-		List<Rooms_mjo_56> rooms = daoImpl.getFilteredRooms(equipment);
-		model.addAttribute("rooms", rooms);
-		return "showRooms";
-	}
-=======
+
+
+
 			List<Rooms_mjo_56> rooms = daoImpl.getFilteredRooms(equipment);
 			model.addAttribute("rooms", rooms);
 			return "showRooms_mjo_56";
 		}
->>>>>>> d3f3f7ce728b9792716382185be0e9d7dd40a2c0
+
 
 	// Login feature
 	@ModelAttribute("login_epe_07")
@@ -208,11 +195,9 @@ public class Controller_cwu_18 {
 		String user_name = daoImpl.getUserNameById(userId);
 		model.addAttribute("userName", user_name);
 
-<<<<<<< HEAD
-		// creating session for user successful login
-=======
+
 		//creating session for user successful login
->>>>>>> d3f3f7ce728b9792716382185be0e9d7dd40a2c0
+
 		session.setAttribute("email", login.getEmail());
 		return "success_epe_07";
 	}

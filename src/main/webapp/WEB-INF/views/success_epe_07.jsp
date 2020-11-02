@@ -12,12 +12,8 @@
 <script src="<c:url value="/static/js/bootstrap.min.js" />"></script>
 </head>
 <h1>${successMessage}</h1>
-<<<<<<< HEAD
+	<h3>Hi! ${userName}</h3>
 
-=======
-<!--<h2>${user.first_name}</h2>
-<h2>${user.email}</h2>-->
->>>>>>> d3f3f7ce728b9792716382185be0e9d7dd40a2c0
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<a class="navbar-brand" href="#">Book Room System</a>
@@ -48,10 +44,8 @@
 
 	</table>
 	<!-- user session -->
-<<<<<<< HEAD
-	<h4>Hi! ${userName}</h4>
-=======
-	<!--<h4>${email}</h4>-->
->>>>>>> d3f3f7ce728b9792716382185be0e9d7dd40a2c0
+
+
+
 </body>
 </html>
