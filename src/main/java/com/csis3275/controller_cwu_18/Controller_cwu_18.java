@@ -24,7 +24,6 @@ import com.csis3275.dao_cwu_18.DAOImpl_cwu_18;
 import com.csis3275.model_cwu_18.Booking_cwu_18;
 import com.csis3275.model_cwu_18.Login_epe_07;
 import com.csis3275.model_cwu_18.Rooms_mjo_56;
-import com.csis3275.model_cwu_18.User_cwu_18;
 
 import com.csis3275.model_cwu_18.User_sho_38;
 
@@ -67,7 +66,7 @@ public class Controller_cwu_18 {
 		model.addAttribute("bookings", bookings);
 		model.addAttribute("userName", user_name);
 
-		User_cwu_18 user = daoImpl.getUserById(userId);
+		User_sho_38 user = daoImpl.getUserById(userId);
 		model.addAttribute("user", user);
 
 		return "showBookings_cwu_18";
@@ -122,7 +121,7 @@ public class Controller_cwu_18 {
 		return title;
 	}
 
-	@ModelAttribute("rooms")
+	@ModelAttribute("roomOptions")
 	public List<String> initialzeRooms() {
 		List<String> rooms = new ArrayList<String>();
 		List<Rooms_mjo_56> roomObject = daoImpl.getAllRooms();
@@ -188,7 +187,7 @@ public class Controller_cwu_18 {
 		model.addAttribute("successMessage", "Dear " + login.getEmail() + " , Welcome");
 		model.addAttribute("login_epe_07", login);
 
-		User_cwu_18 user = daoImpl.getUserByEmail(login.getEmail());
+		User_sho_38 user = daoImpl.getUserByEmail(login.getEmail());
 		// Add user model
 		model.addAttribute("user", user);
 		int userId = user.getUser_id();

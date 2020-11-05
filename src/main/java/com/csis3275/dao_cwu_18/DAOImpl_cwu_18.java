@@ -14,8 +14,6 @@ import com.csis3275.model_cwu_18.Login_epe_07;
 import com.csis3275.model_cwu_18.RoomsMapper_mjo_56;
 import com.csis3275.model_cwu_18.Rooms_mjo_56;
 
-import com.csis3275.model_cwu_18.UserMapper_cwu_18;
-import com.csis3275.model_cwu_18.User_cwu_18;
 import com.csis3275.model_cwu_18.UserMapper_sho_38;
 import com.csis3275.model_cwu_18.User_sho_38;
 
@@ -92,12 +90,12 @@ public class DAOImpl_cwu_18 {
 		return jdbcTemplate.update(SQL_DELETE_BOOKING, idToDelete) > 0;
 	}
 
-	public User_cwu_18 getUserById(int user_id) {
-		return jdbcTemplate.queryForObject(SQL_GET_USER_BY_USERID, new Object[] { user_id }, new UserMapper_cwu_18());
+	public User_sho_38 getUserById(int user_id) {
+		return jdbcTemplate.queryForObject(SQL_GET_USER_BY_USERID, new Object[] { user_id }, new UserMapper_sho_38());
 	}
 
-	public User_cwu_18 getUserByEmail(String email) {
-		return jdbcTemplate.queryForObject(SQL_GET_USER_BY_Email, new Object[] { email }, new UserMapper_cwu_18());
+	public User_sho_38 getUserByEmail(String email) {
+		return jdbcTemplate.queryForObject(SQL_GET_USER_BY_Email, new Object[] { email }, new UserMapper_sho_38());
 	}
 
 	// Login activity
