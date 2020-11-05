@@ -12,7 +12,7 @@
 <script src="<c:url value="/static/js/bootstrap.min.js" />"></script>
 </head>
 <h1>${successMessage}</h1>
-	<h3>Hi! ${userName}</h3>
+<h3>Hi! ${userName}</h3>
 
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -26,16 +26,20 @@
 			<ul class="navbar-nav">
 
 				<li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath}/bookRoom/?id=${userId}">Book Room</a>
-				</li>
+					href="${pageContext.request.contextPath}/showBookings/?id=${userId}">Show
+						Bookings</a></li>
 				<li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath}/showRooms/">Filter Room</a></li>
+					href="${pageContext.request.contextPath}/bookRoom/?id=${userId}">Book
+						Room</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath}/showRooms/">Filter
+						Room</a></li>
 
 			</ul>
 		</div>
 	</nav>
 	<table>
-		
+
 		<tr>
 			<td colspan="2"><a
 				href="${pageContext.request.contextPath}/sessionEnd">Logout</a></td>

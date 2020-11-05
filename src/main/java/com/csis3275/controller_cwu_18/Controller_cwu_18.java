@@ -54,6 +54,9 @@ public class Controller_cwu_18 {
 	public String showBookings(@RequestParam(required = true) int id, Model model) {
 		List<Booking_cwu_18> bookings = daoImpl.getBookingsByUserId(id);
 		model.addAttribute("bookings", bookings);
+		
+		String user_name = daoImpl.getUserNameById(id);
+		model.addAttribute("userName", user_name);
 		return "showBookings_cwu_18";
 	}
 
@@ -68,6 +71,9 @@ public class Controller_cwu_18 {
 
 		User_sho_38 user = daoImpl.getUserById(userId);
 		model.addAttribute("user", user);
+		
+		
+		
 
 		return "showBookings_cwu_18";
 
@@ -80,9 +86,14 @@ public class Controller_cwu_18 {
 
 	@GetMapping("/deleteBooking")
 	public String deleteBooking(@RequestParam(required = true) int id, Model model) {
-		daoImpl.deleteBooking(id);
-		List<Booking_cwu_18> bookings = daoImpl.getAllBookings();
+		
+		Booking_cwu_18 deletedBooking = daoImpl.getBookingById(id);
+		//daoImpl.deleteBooking(id);
+		int deletedUserId = deletedBooking.getUser_id();
+		List<Booking_cwu_18> bookings = daoImpl.getBookingsByUserId(deletedUserId);
 		model.addAttribute("bookings", bookings);
+		model.addAttribute("deleteMessage", "Deleted Booking: " + id);
+		
 		return "showBookings_cwu_18";
 	}
 

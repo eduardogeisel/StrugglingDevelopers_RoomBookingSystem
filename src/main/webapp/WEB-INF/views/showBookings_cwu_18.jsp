@@ -16,6 +16,12 @@
 		<div class="container">
 		<h1>Show Booking List for ${userName}</h1>
 		<hr />
+		<c:if test="${ deleteMessage !=null }">
+			<div class="alert alert-danger" role="alert">${deleteMessage}</div>
+		</c:if>
+		<c:if test="${ editMessage !=null }">
+			<div class="alert alert-success" role="alert">${editMessage}</div>
+		</c:if>
 		<table class="table table-striped table-bordered">
 		<tr>
 				<td>Title</td>
@@ -23,8 +29,9 @@
 				<td>Date</td>
 				<td>Start Time</td>
 				<td>End Time</td>
-				<td>Edit</td>
+				<!-- <td>Edit</td>
 				<td>Delete</td>
+				 -->
 			</tr>
 			<c:forEach var="booking" items="${bookings}">
 				<tr>
@@ -33,12 +40,12 @@
 					<td>${booking.dateTime}</td>
 					<td>${booking.startTime}</td>
 					<td>${booking.endTime}</td>
-				
+				<!-- 
 					<td><a
 						href="${pageContext.request.contextPath}/editBooking/?id=${booking.booking_id}">Edit</a></td>
 					<td><a
 						href="${pageContext.request.contextPath}/deleteBooking/?id=${booking.booking_id}">Delete</a></td>
-					
+					 -->
 				</tr>
 			</c:forEach>
 			
