@@ -18,7 +18,7 @@
 		<hr />
 		<h3>Edit Booking</h3>
 
-		<form:form action="${pageContext.request.contextPath}/editBooking/?id=${booking.booking_id}"
+		<form:form action="${pageContext.request.contextPath}/editBooking/?booking_id=${booking.booking_id}"
 			cssClass="form-horizontal" method="post" modelAttribute="booking">
 			<div class="form-group">
 				<label for="title" class="col-md-3 controllabel">Title:</label>

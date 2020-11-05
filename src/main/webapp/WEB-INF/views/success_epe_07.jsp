@@ -26,7 +26,7 @@
 			<ul class="navbar-nav">
 
 				<li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath}/bookRoom/?id=${user.user_id}">Book Room</a>
+					href="${pageContext.request.contextPath}/bookRoom/?id=${userId}">Book Room</a>
 				</li>
 				<li class="nav-item"><a class="nav-link"
 					href="${pageContext.request.contextPath}/showRooms/">Filter Room</a></li>

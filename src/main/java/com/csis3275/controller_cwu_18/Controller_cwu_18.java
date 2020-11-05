@@ -41,10 +41,10 @@ public class Controller_cwu_18 {
 	}
 
 	@GetMapping("/bookRoom")
-	public String bookRoom(HttpSession session, Model model) {
+	public String bookRoom(@RequestParam(required = true) int id, Model model) {
 		// Add userId
-		int userId = 200774284;
-		model.addAttribute("userId", userId);
+		//int userId = 200774284;
+		model.addAttribute("userId", id);
 		// Add bookingId
 		String bookingId = getRandomBookingID();
 		model.addAttribute("bookingId", bookingId);
@@ -52,8 +52,8 @@ public class Controller_cwu_18 {
 	}
 
 	@GetMapping("/showBookings")
-	public String showBookings(@RequestParam(required = true) int user_id, Model model) {
-		List<Booking_cwu_18> bookings = daoImpl.getBookingsByUserId(user_id);
+	public String showBookings(@RequestParam(required = true) int id, Model model) {
+		List<Booking_cwu_18> bookings = daoImpl.getBookingsByUserId(id);
 		model.addAttribute("bookings", bookings);
 		return "showBookings_cwu_18";
 	}
@@ -80,18 +80,18 @@ public class Controller_cwu_18 {
 	//Delete data
 
 	@GetMapping("/deleteBooking")
-	public String deleteBookings(@RequestParam(required = true) int booking_id, Model model) {
-		daoImpl.deleteBooking(booking_id);
+	public String deleteBooking(@RequestParam(required = true) int id, Model model) {
+		daoImpl.deleteBooking(id);
 		List<Booking_cwu_18> bookings = daoImpl.getAllBookings();
 		model.addAttribute("bookings", bookings);
-		return "showBookings";
+		return "showBookings_cwu_18";
 	}
 
 	// Edit data
 	@GetMapping("/editBooking")
-	public String editBooking(@RequestParam(required = true) int booking_id, Model model) {
+	public String editBooking(@RequestParam(required = true) int id, Model model) {
 
-		Booking_cwu_18 updatedBooking = daoImpl.getBookingById(booking_id);
+		Booking_cwu_18 updatedBooking = daoImpl.getBookingById(id);
 		model.addAttribute("booking", updatedBooking);
 
 		return "editBooking_cwu_18";
@@ -101,12 +101,13 @@ public class Controller_cwu_18 {
 	public String updateBooking(@ModelAttribute("booking") Booking_cwu_18 updatedBooking, Model model) {
 
 		daoImpl.updateBooking(updatedBooking);
-		List<Booking_cwu_18> bookings = daoImpl.getAllBookings();
+		int userId = updatedBooking.getUser_id();
+		List<Booking_cwu_18> bookings = daoImpl.getBookingsByUserId(userId);
 		model.addAttribute("bookings", bookings);
 
 		model.addAttribute("message", "Edited Booking " + updatedBooking.getBooking_id());
 
-		return "showBookings";
+		return "showBookings_cwu_18";
 
 	}
 
