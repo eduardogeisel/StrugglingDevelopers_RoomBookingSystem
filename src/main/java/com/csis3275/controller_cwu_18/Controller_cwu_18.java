@@ -73,11 +73,36 @@ public class Controller_cwu_18 {
 		model.addAttribute("userName", user_name);
 
 		User_sho_38 user = daoImpl.getUserById(userId);
+
 		model.addAttribute("user", user);		
 
 		return "showBookings_cwu_18";
 
 	}
+	
+	
+	//Confirm booking feature
+	
+	@GetMapping("/confirmBooking")
+	public String confirmBooking(@RequestParam(required = true) int id, Model model) {
+			
+		Booking_cwu_18 confirmation = daoImpl.getBookingById(id);
+		
+		model.addAttribute("confirmation", confirmation);
+		
+		//return the new view
+		return "bookingConfirmation_mjo_56";
+	}
+	
+	@PostMapping("/confirmBooking")
+	public String confirmBooking(@ModelAttribute("confirmation") Booking_cwu_18 confirmation, Model model) {
+
+		model.addAttribute("confirmation", confirmation);
+
+		return "bookingConfirmation_mjo_56";
+
+	}
+
 
 	
 	//Delete data
