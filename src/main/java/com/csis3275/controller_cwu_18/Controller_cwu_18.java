@@ -245,7 +245,7 @@ public class Controller_cwu_18 {
 
 		session.setAttribute("email", login.getEmail());
 		if(user.getUser_type() == 3) {
-			return "bookingLimitation_epe_07";
+			return "successAdmin_epe_07";
 		}
 		else {
 			return "success_epe_07";
