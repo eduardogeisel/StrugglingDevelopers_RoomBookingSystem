@@ -243,7 +243,13 @@ public class Controller_cwu_18 {
 		//creating session for user successful login
 
 		session.setAttribute("email", login.getEmail());
-		return "success_epe_07";
+		if(user.getUser_type() == 3) {
+			return "bookingLimitation_epe_07";
+		}
+		else {
+			return "success_epe_07";
+		}
+		
 	}
 
 	@GetMapping("/sessionEnd")
@@ -307,5 +313,15 @@ public class Controller_cwu_18 {
 		}
 		return userId;
 
+	}
+	
+	//Booking Limitation (admin Feature)
+	@GetMapping("/bookingLimitation")
+	public String bookingLimitation(@RequestParam(required = true) int id, Model model) {
+		
+		model.addAttribute("userId", id);		
+		String bookingId = getRandomBookingID();
+		model.addAttribute("bookingId", bookingId);
+		return "bookingLimitation_epe_07";
 	}
 }
