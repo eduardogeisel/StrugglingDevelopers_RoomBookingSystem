@@ -97,6 +97,7 @@ public class Controller_cwu_18 {
 	@PostMapping("/confirmBooking")
 	public String confirmBooking(@ModelAttribute("confirmation") Booking_cwu_18 confirmation, Model model) {
 
+		daoImpl.createBooking(confirmation);
 		model.addAttribute("confirmation", confirmation);
 
 		return "bookingConfirmation_mjo_56";
@@ -142,6 +143,15 @@ public class Controller_cwu_18 {
 
 		return "showBookings_cwu_18";
 
+	}
+	
+	//Calendar Controller
+	@GetMapping("/bookingCalendar")
+	public String bookingCalendar(HttpSession session, Model model) {
+
+
+		model.addAttribute("num", "Repeating Event");
+		return "bookingCalendar_cwu_18";
 	}
 
 	@ModelAttribute("title")

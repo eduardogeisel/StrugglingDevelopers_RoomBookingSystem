@@ -34,6 +34,8 @@
 				<li class="nav-item"><a class="nav-link"
 					href="${pageContext.request.contextPath}/showRooms/">Filter
 						Room</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath}/bookingCalendar/">Calendar</a></li>
 
 			</ul>
 		</div>
