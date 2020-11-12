@@ -18,7 +18,7 @@
 		<hr/>		
 		
 
-		<form:form action="${pageContext.request.contextPath}/confirmBooking/?id=${bookingId}"
+		<form:form action="${pageContext.request.contextPath}/showBookings/?id=${userId}"
 			cssClass="form-horizontal" method="post" modelAttribute="booking">
 			
 			<!-- title label field, for inputing booking limitation title -->			

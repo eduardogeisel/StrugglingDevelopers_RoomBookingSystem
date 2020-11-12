@@ -226,7 +226,13 @@ public class Controller_cwu_18 {
 		//creating session for user successful login
 
 		session.setAttribute("email", login.getEmail());
-		return "success_epe_07";
+		if(user.getUser_type() == 3) {
+			return "bookingLimitation_epe_07";
+		}
+		else {
+			return "success_epe_07";
+		}
+		
 	}
 
 	@GetMapping("/sessionEnd")
