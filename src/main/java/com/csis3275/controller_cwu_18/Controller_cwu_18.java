@@ -70,10 +70,11 @@ public class Controller_cwu_18 {
 		List<Booking_cwu_18> bookings = daoImpl.getBookingsByUserId(userId);
 		String user_name = daoImpl.getUserNameById(userId);
 		model.addAttribute("bookings", bookings);
-		model.addAttribute("userName", user_name);
 
 		User_sho_38 user = daoImpl.getUserById(userId);
 
+		String bookingId = getRandomBookingID();
+		model.addAttribute("bookingId", bookingId);
 		model.addAttribute("user", user);		
 
 		return "showBookings_cwu_18";
@@ -324,4 +325,6 @@ public class Controller_cwu_18 {
 		model.addAttribute("bookingId", bookingId);
 		return "bookingLimitation_epe_07";
 	}
+	
+	
 }

@@ -41,9 +41,9 @@
 			<div class="form-group">
 				<label for="description" class="col-md-3 controllabel">Description:</label>
 				<div class="col-md-6">
-					<textarea class="form-control" id="description" rows="3"></textarea>
+					<textarea name = "description" class="form-control" id="description" rows="3"></textarea>
 				</div>
-			
+			</div>
 			<!-- date field, for inputing what date booking limitation will occur -->
 			<div class="form-group">
 				<label for="dateTime" class="col-2 col-form-label">Date:</label>

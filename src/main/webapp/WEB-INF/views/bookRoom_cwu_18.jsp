@@ -33,7 +33,7 @@
 			<div class="form-group">
 				<label for="description" class="col-md-3 controllabel">Description:</label>
 				<div class="col-md-6">
-					<textarea class="form-control" id="description" rows="3"></textarea>
+					<textarea name = "description" class="form-control" id="description" rows="3"></textarea>
 				</div>
 
 
