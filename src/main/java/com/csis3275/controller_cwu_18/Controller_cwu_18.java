@@ -296,8 +296,7 @@ public class Controller_cwu_18 {
 	@GetMapping("/bookingLimitation")
 	public String bookingLimitation(@RequestParam(required = true) int id, Model model) {
 		
-		model.addAttribute("userId", id);
-		
+		model.addAttribute("userId", id);		
 		String bookingId = getRandomBookingID();
 		model.addAttribute("bookingId", bookingId);
 		return "bookingLimitation_epe_07";

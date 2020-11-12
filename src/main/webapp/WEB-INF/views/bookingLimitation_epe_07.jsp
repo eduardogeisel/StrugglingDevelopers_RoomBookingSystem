@@ -14,7 +14,7 @@
 </head>
 <body>
 	<div class="container">
-		<h1>Booking Limitation Form</h1>
+		<h1>Booking Limitation Form (Admin)</h1>
 		<hr/>		
 		
 
