@@ -291,4 +291,15 @@ public class Controller_cwu_18 {
 		return userId;
 
 	}
+	
+	//Booking Limitation (admin Feature)
+	@GetMapping("/bookingLimitation")
+	public String bookingLimitation(@RequestParam(required = true) int id, Model model) {
+		
+		model.addAttribute("userId", id);
+		
+		String bookingId = getRandomBookingID();
+		model.addAttribute("bookingId", bookingId);
+		return "bookingLimitation_epe_07";
+	}
 }
