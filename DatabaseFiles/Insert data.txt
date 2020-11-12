@@ -18,6 +18,7 @@ insert into users (user_id, first_name, last_name, email, address, contact_numbe
 insert into users (user_id, first_name, last_name, email, address, contact_number, password, user_type) values ('200919463', 'Albertine', 'Yanele', 'ayaneleh@census.gov', '71053 Dennis Lane', '292-642-3209', 'mlidFSl1U5JR', 2);
 insert into users (user_id, first_name, last_name, email, address, contact_number, password, user_type) values ('200170724', 'Joela', 'Beck', 'jbecki@reuters.com', '2 Bartillon Avenue', '437-967-2294', 'Oa790rT', 2);
 insert into users (user_id, first_name, last_name, email, address, contact_number, password, user_type) values ('200190187', 'Giles', 'Flipsen', 'gflipsenj@washington.edu', '642 Aberg Street', '508-372-8635', 'JRrF7PCuW7', 2);
+insert into users (user_id, first_name, last_name, email, address, contact_number, password, user_type) values ('123456789', 'Admin', 'Admin', 'admin@admin.com', 'Admin', '777-777-7777', 'admin', 3);
 
 
 
