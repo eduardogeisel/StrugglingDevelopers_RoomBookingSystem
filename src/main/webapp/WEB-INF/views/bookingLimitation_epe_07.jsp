@@ -37,12 +37,13 @@
 				</div>
 			</div>
 			
-			<!-- description field, for inputing reason for bookint limitation (maintenance...) -->
+			<!-- description field, for inputing reason for booking limitation (maintenance...) -->
 			<div class="form-group">
 				<label for="description" class="col-md-3 controllabel">Description:</label>
 				<div class="col-md-6">
-					<textarea class="form-control" id="description" rows="3"></textarea>
+					<textarea name = "description" class="form-control" id="description" rows="3"></textarea>
 				</div>
+			</div>
 			
 			<!-- date field, for inputing what date booking limitation will occur -->
 			<div class="form-group">
@@ -54,19 +55,19 @@
 			</div>
 			
 			<!-- start time field, for inputing what time will booking limitation occur -->
-			<div class="form-group">
-				<label for="startTime" class="col-2 col-form-label">Start Time:</label>
+			<div class="invisible">
+				
 				<div class="col-6">
-					<form:input class="form-control" type="time" 
+					<form:input class="form-control" type="time" value="00:00"
 						id="startTime" path="startTime" />
 				</div>
 			</div>
 			
 			<!-- end time field, for inputing what time will booking limitation end -->
-			<div class="form-group">
-				<label for="endTime" class="col-2 col-form-label">End Time:</label>
+			<div class="invisible">
+				
 				<div class="col-6">
-					<form:input class="form-control" type="time" 
+					<form:input class="form-control" type="time" value="23:59"
 						id="endTime" path="endTime" />
 				</div>
 			</div>
