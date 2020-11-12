@@ -11,17 +11,17 @@
 <script src="<c:url value="/static/js/jquery-1.11.1.min.js" />"></script>
 <script src="<c:url value="/static/js/bootstrap.min.js" />"></script>
 </head>
-<h1>${successMessage}</h1>
-<h3>Hello, ${userName}</h3>
+
+<h1>Hello, ${userName}</h1><br><br><br>
 
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="#">Book Room System</a>
+	  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<!--  	<a class="navbar-brand" href="#">Book Room System</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarNav" aria-controls="navbarNav"
 			aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
-		</button>
+		</button> -->
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav">
 
@@ -30,7 +30,7 @@
 
 			</ul>
 		</div>
-	</nav>
+	</nav><br><br><br>
 	<table>
 
 		<tr>
