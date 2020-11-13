@@ -13,7 +13,33 @@
 <script src="<c:url value="/static/js/bootstrap.min.js" />"></script>
 </head>
 <body>
-		<div class="container">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="#">Book Room System</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarNav" aria-controls="navbarNav"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath}/showBookings/?id=${userId}">Show
+						Bookings</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath}/bookRoom/?id=${userId}">Book
+						Room</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath}/showRooms/">Filter
+						Room</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath}/bookingCalendar/?id=${userId}">Calendar</a></li>
+
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container">
 		<h1>Show Booking List for ${userName}</h1>
 		<hr />
 		<c:if test="${ deleteMessage !=null }">
@@ -23,7 +49,7 @@
 			<div class="alert alert-success" role="alert">${editMessage}</div>
 		</c:if>
 		<table class="table table-striped table-bordered">
-		<tr>
+			<tr>
 				<td>Title</td>
 				<td>Room ID</td>
 				<td>Date</td>
@@ -32,7 +58,7 @@
 				<!--
 				 <td>Edit</td>
 				 -->
-				
+
 				<td>Delete</td>
 			</tr>
 			<c:forEach var="booking" items="${bookings}">
@@ -48,13 +74,11 @@
 					
 					-->
 					<td><a
-						href="${pageContext.request.contextPath}/deleteBooking/?id=${booking.booking_id}">Delete</a></td> 
+						href="${pageContext.request.contextPath}/deleteBooking/?id=${booking.booking_id}">Delete</a></td>
 				</tr>
 			</c:forEach>
-			
+
 		</table>
-		<a class="btn btn-primary" href="${pageContext.request.contextPath}/success_epe_07" role="button">Add Bookings</a>
-		<a class="btn btn-primary" href="${pageContext.request.contextPath}/success_epe_07" role="button">Back</a>
-		</div>
+	</div>
 </body>
 </html>

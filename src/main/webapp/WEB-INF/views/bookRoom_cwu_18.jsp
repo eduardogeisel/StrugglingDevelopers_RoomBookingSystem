@@ -13,13 +13,41 @@
 <script src="<c:url value="/static/js/bootstrap.min.js" />"></script>
 </head>
 <body>
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="#">Book Room System</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarNav" aria-controls="navbarNav"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath}/showBookings/?id=${userId}">Show
+						Bookings</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath}/bookRoom/?id=${userId}">Book
+						Room</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath}/showRooms/">Filter
+						Room</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath}/bookingCalendar/?id=${userId}">Calendar</a></li>
+
+			</ul>
+		</div>
+	</nav>
+
 	<div class="container">
 		<h1>Booking Room Form</h1>
 		<hr />
-		
+
 		<!-- **************MJ*************** Changed below id to booking id and passed to confirm booking -->
 
-		<form:form action="${pageContext.request.contextPath}/confirmBooking/?id=${bookingId}"
+		<form:form
+			action="${pageContext.request.contextPath}/confirmBooking/?id=${bookingId}"
 			cssClass="form-horizontal" method="post" modelAttribute="booking">
 			<div class="form-group">
 				<label for="title" class="col-md-3 controllabel">Title:</label>
@@ -33,7 +61,8 @@
 			<div class="form-group">
 				<label for="description" class="col-md-3 controllabel">Description:</label>
 				<div class="col-md-6">
-					<textarea name = "description" class="form-control" id="description" rows="3"></textarea>
+					<textarea name="description" class="form-control" id="description"
+						rows="3"></textarea>
 				</div>
 
 
@@ -47,34 +76,34 @@
 			<div class="form-group">
 				<label for="dateTime" class="col-2 col-form-label">Date:</label>
 				<div class="col-6">
-					<form:input type="date" 
-						path="dateTime" id="dateTime" />
+					<form:input type="date" path="dateTime" id="dateTime" />
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="startTime" class="col-2 col-form-label">Start Time:</label>
+				<label for="startTime" class="col-2 col-form-label">Start
+					Time:</label>
 				<div class="col-6">
-					<form:input class="form-control" type="time" 
-						id="startTime" path="startTime" />
+					<form:input class="form-control" type="time" id="startTime"
+						path="startTime" />
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="endTime" class="col-2 col-form-label">End Time:</label>
 				<div class="col-6">
-					<form:input class="form-control" type="time" 
-						id="endTime" path="endTime" />
+					<form:input class="form-control" type="time" id="endTime"
+						path="endTime" />
 				</div>
 			</div>
 			<div class="invisible">
 				<div class="col-6">
-					<form:input class="form-control" value="${userId}"  id="user_id"
+					<form:input class="form-control" value="${userId}" id="user_id"
 						path="user_id" />
 				</div>
 			</div>
 			<div class="invisible">
 				<div class="col-6">
-					<form:input class="form-control" value="${bookingId}" id="booking_id"
-						path="booking_id" />
+					<form:input class="form-control" value="${bookingId}"
+						id="booking_id" path="booking_id" />
 				</div>
 			</div>
 
