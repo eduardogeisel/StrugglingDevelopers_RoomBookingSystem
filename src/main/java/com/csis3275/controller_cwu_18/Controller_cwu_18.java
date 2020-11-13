@@ -337,6 +337,20 @@ public class Controller_cwu_18 {
 
 	}
 	
+	
+	/**
+	 * 
+	 * @author Eduardo Geisel Peres - 300318007
+	 * This is the get mapping for the booking limitation admin feature.
+	 * The booking limitation is a feature where an admin can remove the booking of a specific room on a specific day
+	 * for a specific purpose (maintenance, cleaning, fumigation...). Basically the admin logs in to the web app and
+	 * goes to the booking limitation view, there he inputs a title (one of the purposes for this limitation), a short
+	 * description, the room that will be limited for booking and the date. After he inputs all of that information, 
+	 * the admin submits the form and then he will go to a booking limitation confirmation page, where he can delete that 
+	 * limitation if he desires.
+	 * 
+	 */
+	
 	//Booking Limitation (admin Feature)
 	@GetMapping("/bookingLimitation")
 	public String bookingLimitation(@RequestParam(required = true) int id, Model model) {
