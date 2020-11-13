@@ -1,3 +1,13 @@
+/*
+ * @Mansi Joshi (Student Id: 300317856) - Feature: Booking Confirmation - Iteration 2
+ * 
+ * This feature allows the user to view a confirmation of a booking they created.
+ * Once a booking is done from Book Room page, the next page shows the record of the
+ * booking with details like room id, user id, date and time of booking.
+ * The user can generate a pdf document containing this record for future reference.
+ * 
+ */
+
 package com.csis3275.model_cwu_18;
 
 import java.time.LocalTime;
@@ -65,7 +75,7 @@ public class Booking_cwu_18 {
 	public Date getDateTime() {
 		return dateTime;
 	}
-	@DateTimeFormat(pattern = "yyyy-mm-dd")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	public void setDateTime(Date dateTime) {
 		this.dateTime = dateTime;
 	}
