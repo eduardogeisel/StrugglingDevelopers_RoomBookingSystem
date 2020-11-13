@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.csis3272.project</groupId>
-  <artifactId>StrugglingDevelopers_RoomBookingSystem</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>war</packaging>
+	<groupId>com.csis3272.project</groupId>
+	<artifactId>StrugglingDevelopers_RoomBookingSystem</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 
-  <name>StrugglingDevelopers_RoomBookingSystem Maven Webapp</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+	<name>StrugglingDevelopers_RoomBookingSystem Maven Webapp</name>
+	<!-- FIXME change it to the project's website -->
+	<url>http://www.example.com</url>
 
-  <properties>
+	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.14</maven.compiler.source>
 		<maven.compiler.target>1.14</maven.compiler.target>
 		<java.version>14</java.version>
 	</properties>
 
-  <dependencies>
-    <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
@@ -60,11 +61,11 @@
 			<version>4.11</version>
 			<scope>test</scope>
 		</dependency>
-  </dependencies>
+	</dependencies>
 
-  <build>
-    <finalName>StrugglingDevelopers_RoomBookingSystem</finalName>
-    <pluginManagement><!-- lock down plugins versions to avoid using Maven 
+	<build>
+		<finalName>StrugglingDevelopers_RoomBookingSystem</finalName>
+		<pluginManagement><!-- lock down plugins versions to avoid using Maven 
 				defaults (may be moved to parent pom) -->
 			<plugins>
 				<plugin>
@@ -98,5 +99,5 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
-  </build>
+	</build>
 </project>

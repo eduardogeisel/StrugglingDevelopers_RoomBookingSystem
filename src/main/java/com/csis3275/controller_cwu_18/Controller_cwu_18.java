@@ -148,9 +148,15 @@ public class Controller_cwu_18 {
 	
 	//Calendar Controller
 	@GetMapping("/bookingCalendar")
-	public String bookingCalendar(HttpSession session, Model model) {
+	public String bookingCalendar(@RequestParam(required = true) int id, Model model) {
 
-
+		List<Booking_cwu_18> bookings = daoImpl.getBookingsByUserId(id);
+		model.addAttribute("bookings", bookings);
+		
+		int user_id = id;
+		model.addAttribute("userId", user_id);
+		
+		
 		model.addAttribute("num", "Repeating Event");
 		return "bookingCalendar_cwu_18";
 	}
@@ -319,6 +325,10 @@ public class Controller_cwu_18 {
 	//Booking Limitation (admin Feature)
 	@GetMapping("/bookingLimitation")
 	public String bookingLimitation(@RequestParam(required = true) int id, Model model) {
+		
+		
+		List<Booking_cwu_18> limitations = daoImpl.getBookingsByUserId(123456789);
+		
 		
 		model.addAttribute("userId", id);		
 		String bookingId = getRandomBookingID();
