@@ -29,9 +29,11 @@
 				<td>Date</td>
 				<td>Start Time</td>
 				<td>End Time</td>
-				<!-- <td>Edit</td>
-				<td>Delete</td>
+				<!--
+				 <td>Edit</td>
 				 -->
+				
+				<td>Delete</td>
 			</tr>
 			<c:forEach var="booking" items="${bookings}">
 				<tr>
@@ -40,15 +42,19 @@
 					<td>${booking.dateTime}</td>
 					<td>${booking.startTime}</td>
 					<td>${booking.endTime}</td>
-				<!-- 
-					<td><a
+
+					<!-- <td><a
 						href="${pageContext.request.contextPath}/editBooking/?id=${booking.booking_id}">Edit</a></td>
+					
+					-->
 					<td><a
-						href="${pageContext.request.contextPath}/deleteBooking/?id=${booking.booking_id}">Delete</a></td>
-					 -->
+						href="${pageContext.request.contextPath}/deleteBooking/?id=${booking.booking_id}">Delete</a></td> 
 				</tr>
 			</c:forEach>
 			
 		</table>
+		<a class="btn btn-primary" href="${pageContext.request.contextPath}/success_epe_07" role="button">Add Bookings</a>
+		<a class="btn btn-primary" href="${pageContext.request.contextPath}/success_epe_07" role="button">Back</a>
+		</div>
 </body>
 </html>

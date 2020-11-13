@@ -58,6 +58,9 @@ public class Controller_cwu_18 {
 		
 		String user_name = daoImpl.getUserNameById(id);
 		model.addAttribute("userName", user_name);
+		
+		int user_id = id;
+		model.addAttribute("userId", user_id);
 		return "showBookings_cwu_18";
 	}
 
@@ -90,6 +93,7 @@ public class Controller_cwu_18 {
 			model.addAttribute("user", user);
 			return "showBookings_cwu_18";
 		}				
+
 	}
 	
 	
@@ -109,11 +113,13 @@ public class Controller_cwu_18 {
 	@PostMapping("/confirmBooking")
 	public String confirmBooking(@ModelAttribute("confirmation") Booking_cwu_18 confirmation, Model model) {
 
+		daoImpl.createBooking(confirmation);
 		model.addAttribute("confirmation", confirmation);
 
 		return "bookingConfirmation_mjo_56";
 
 	}
+
 
 	
 	//Delete data
@@ -122,7 +128,7 @@ public class Controller_cwu_18 {
 	public String deleteBooking(@RequestParam(required = true) int id, Model model) {
 		
 		Booking_cwu_18 deletedBooking = daoImpl.getBookingById(id);
-		//daoImpl.deleteBooking(id);
+		daoImpl.deleteBooking(id);
 		int deletedUserId = deletedBooking.getUser_id();
 		List<Booking_cwu_18> bookings = daoImpl.getBookingsByUserId(deletedUserId);
 		model.addAttribute("bookings", bookings);
@@ -153,6 +159,21 @@ public class Controller_cwu_18 {
 
 		return "showBookings_cwu_18";
 
+	}
+	
+	//Calendar Controller
+	@GetMapping("/bookingCalendar")
+	public String bookingCalendar(@RequestParam(required = true) int id, Model model) {
+
+		List<Booking_cwu_18> bookings = daoImpl.getBookingsByUserId(id);
+		model.addAttribute("bookings", bookings);
+		
+		int user_id = id;
+		model.addAttribute("userId", user_id);
+		
+		
+		model.addAttribute("num", "Repeating Event");
+		return "bookingCalendar_cwu_18";
 	}
 
 	@ModelAttribute("title")
@@ -320,9 +341,15 @@ public class Controller_cwu_18 {
 	@GetMapping("/bookingLimitation")
 	public String bookingLimitation(@RequestParam(required = true) int id, Model model) {
 		
+		
+		List<Booking_cwu_18> limitations = daoImpl.getBookingsByUserId(123456789);
+		
+		
 		model.addAttribute("userId", id);		
 		String bookingId = getRandomBookingID();
 		model.addAttribute("bookingId", bookingId);
 		return "bookingLimitation_epe_07";
 	}
+	
+	
 }

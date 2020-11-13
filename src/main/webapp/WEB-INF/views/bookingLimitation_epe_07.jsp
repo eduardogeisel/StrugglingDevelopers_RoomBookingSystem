@@ -44,7 +44,10 @@
 					<textarea name = "description" class="form-control" id="description" rows="3"></textarea>
 				</div>
 			</div>
+<<<<<<< HEAD
 			
+=======
+>>>>>>> 522aff8187592b66a5cb11369026f6ca64e799b8
 			<!-- date field, for inputing what date booking limitation will occur -->
 			<div class="form-group">
 				<label for="dateTime" class="col-2 col-form-label">Date:</label>
