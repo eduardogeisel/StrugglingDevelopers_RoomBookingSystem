@@ -3,6 +3,7 @@ package com.csis3275.controller_cwu_18;
 import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
@@ -62,16 +63,33 @@ public class Controller_cwu_18 {
 
 	@PostMapping("/showBookings")
 	public String insertBooking(@ModelAttribute("booking") Booking_cwu_18 newBooking, Model model) {
-		daoImpl.createBooking(newBooking);
-		int userId = newBooking.getUser_id();
-		List<Booking_cwu_18> bookings = daoImpl.getBookingsByUserId(userId);
-		String user_name = daoImpl.getUserNameById(userId);
-		model.addAttribute("bookings", bookings);
-		model.addAttribute("userName", user_name);
+		
+		
+		List<Rooms_mjo_56> roomList = daoImpl.getAllRooms();
+		List<User_sho_38> userList = daoImpl.getAllUsers();
+		List<Booking_cwu_18> dateList = daoImpl.getAllBookings();
+		
+		Date compareDate = newBooking.getDateTime();
+		int compareUser = newBooking.getUser_id();
+		String compareRoom = newBooking.getRoom_id();
+		
+		if(dateList.contains(compareDate) && userList.contains(compareUser) && roomList.contains(compareRoom)) {
+			String failureMessage = "Room is already booked: ";
+			model.addAttribute("failureMessage", failureMessage);
+			return "bookRoom_cwu_18";
+		}
+		else {
+			daoImpl.createBooking(newBooking);
+			int userId = newBooking.getUser_id();
+			List<Booking_cwu_18> bookings = daoImpl.getBookingsByUserId(userId);
+			String user_name = daoImpl.getUserNameById(userId);
+			model.addAttribute("bookings", bookings);
+			model.addAttribute("userName", user_name);
 
-		User_sho_38 user = daoImpl.getUserById(userId);
-		model.addAttribute("user", user);
-		return "showBookings_cwu_18";
+			User_sho_38 user = daoImpl.getUserById(userId);
+			model.addAttribute("user", user);
+			return "showBookings_cwu_18";
+		}				
 	}
 	
 	
