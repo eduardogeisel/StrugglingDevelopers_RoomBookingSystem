@@ -1,5 +1,7 @@
 package com.csis3275.model_cwu_18;
 
+import com.csis3275.dao_cwu_18.DAOImpl_cwu_18;
+
 /**
  * 
  * @author Eduardo Peres - 300318007
@@ -19,6 +21,15 @@ public class Login_epe_07 {
 	private String email;
 	private String password;
 	
+	public Login_epe_07()
+	{
+		
+	}
+	public Login_epe_07(String newEmail, String newPassword)
+	{
+		this.email = newEmail;
+		this.password = newPassword;
+	}
 	
 	public String getEmail() {
 		return email;
@@ -32,5 +43,5 @@ public class Login_epe_07 {
 	public void setPassword(String password) {
 		this.password = password;
 	}	
-
+	
 }
