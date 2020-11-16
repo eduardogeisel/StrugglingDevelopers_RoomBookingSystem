@@ -43,6 +43,7 @@ public class DAOImpl_cwu_18 {
 	// login feature
 	private final String SQL_GET_EMAIL_PASS = "SELECT EMAIL, PASSWORD FROM USERS";
 	private final String SQL_FIND_USER = "SELECT * FROM USERS WHERE email = ? AND password = ?";
+	private final String SQL_GET_USERID = "SELECT USER_ID FROM USERS WHERE email = ? AND password = ?";
 
 	// sign up feature
 	private final String SQL_CREATE_USER = "INSERT INTO USERS (user_id,first_name,last_name,email,address,"
@@ -118,6 +119,12 @@ public class DAOImpl_cwu_18 {
 		}
 	}
 
+	public List<Login_epe_07> getUserID(String email, String password) {
+
+		return jdbcTemplate.query(SQL_GET_USERID, new LoginMapper_epe_07(), email, password);
+	}
+
+	
 	// Filter feature
 	public List<Rooms_mjo_56> getAllRooms() {
 		return jdbcTemplate.query(SQL_GET_ROOMS, new RoomsMapper_mjo_56());
