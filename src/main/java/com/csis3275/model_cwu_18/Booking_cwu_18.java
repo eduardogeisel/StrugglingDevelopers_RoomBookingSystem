@@ -16,6 +16,8 @@ import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.csis3275.controller_cwu_18.IdGenerator_cwu_18;
+
 public class Booking_cwu_18 {
 
 	private int booking_id;
@@ -32,7 +34,7 @@ public class Booking_cwu_18 {
 		return booking_id;
 	}
 	public void setBooking_id(int booking_id) {
-		this.booking_id = booking_id;
+		this.booking_id = IdGenerator_cwu_18.getRandomBookingID();
 	}
 	public LocalTime getStartTime() {
 		return startTime;

@@ -10,10 +10,10 @@ public class IdGenerator_cwu_18 {
 
 		int userId = 0;
 		if (user.getUser_type() == 1) {
-			userId = 100000000 + Integer.parseInt(getRandomBookingID());
+			userId = 100000000 + getRandomBookingID();
 
 		} else if (user.getUser_type() == 2) {
-			userId = 200000000 + Integer.parseInt(getRandomBookingID());
+			userId = 200000000 + getRandomBookingID();
 
 		}
 		return userId;
@@ -21,13 +21,15 @@ public class IdGenerator_cwu_18 {
 	}
 	
 	// Random Number Generator
-		public static String getRandomBookingID() {
+		public static int getRandomBookingID() {
 			// It will generate 6 digit random Number.
 			// from 0 to 999999
 			Random rnd = new Random();
 			int number = rnd.nextInt(999999);
 
 			// this will convert any number sequence into 6 character.
-			return String.format("%06d", number);
+			String temp = String.format("%06d", number);
+			return Integer.parseInt(temp);
+			
 		}
 }

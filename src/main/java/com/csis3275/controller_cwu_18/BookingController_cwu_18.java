@@ -46,8 +46,8 @@ public class BookingController_cwu_18 {
 		// int userId = 200774284;
 		model.addAttribute("userId", id);
 		// Add bookingId
-		String bookingId = IdGenerator_cwu_18.getRandomBookingID();
-		model.addAttribute("bookingId", bookingId);
+		//String bookingId = IdGenerator_cwu_18.getRandomBookingID();
+		//model.addAttribute("bookingId", bookingId);
 		return "bookRoom_cwu_18";
 	}
 
@@ -179,8 +179,8 @@ public class BookingController_cwu_18 {
 		List<Booking_cwu_18> limitations = daoImpl.getBookingsByUserId(123456789);
 
 		model.addAttribute("userId", id);
-		String bookingId = IdGenerator_cwu_18.getRandomBookingID();
-		model.addAttribute("bookingId", bookingId);
+		//String bookingId = IdGenerator_cwu_18.getRandomBookingID();
+		//model.addAttribute("bookingId", bookingId);
 		return "bookingLimitation_epe_07";
 	}
 
