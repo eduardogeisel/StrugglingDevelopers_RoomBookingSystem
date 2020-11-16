@@ -33,7 +33,7 @@ public class Booking_cwu_18 {
 	}
 
 	public void setBooking_id(int booking_id) {
-		this.booking_id = IdGenerator_cwu_18.getRandomBookingID();
+		this.booking_id =  generateId();
 	}
 
 	public LocalTime getStartTime() {
@@ -98,7 +98,6 @@ public class Booking_cwu_18 {
 	public Booking_cwu_18(Date dateTime, LocalTime startTime, LocalTime endTime, String title,
 			String description, int user_id, String room_id) {
 
-		this.booking_id = getBooking_id();
 		this.dateTime = dateTime;
 		this.startTime = startTime;
 		this.endTime = endTime;
@@ -109,6 +108,10 @@ public class Booking_cwu_18 {
 	}
 
 	public Booking_cwu_18() {
+	}
+	
+	public int generateId() {
+		return IdGenerator_cwu_18.getRandomBookingID();
 	}
 
 }
