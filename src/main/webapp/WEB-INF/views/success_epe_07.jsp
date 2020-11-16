@@ -11,8 +11,8 @@
 <script src="<c:url value="/static/js/jquery-1.11.1.min.js" />"></script>
 <script src="<c:url value="/static/js/bootstrap.min.js" />"></script>
 </head>
-<h1>${successMessage}</h1>
-<h3>Hi! ${userName}</h3>
+<!--  <h1>${successMessage}</h1>-->
+<h1>Hi, ${userName}!</h1>
 
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -21,7 +21,7 @@
 			data-target="#navbarNav" aria-controls="navbarNav"
 			aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
-		</button>
+		</button><br>
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav">
 
@@ -39,7 +39,7 @@
 
 			</ul>
 		</div>
-	</nav>
+	</nav><br>
 	<table>
 
 		<tr>
@@ -49,9 +49,6 @@
 
 
 	</table>
-	<!-- user session -->
-
-
 
 </body>
 </html>
