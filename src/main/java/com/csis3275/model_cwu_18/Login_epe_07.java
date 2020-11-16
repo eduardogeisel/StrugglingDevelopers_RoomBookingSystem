@@ -31,6 +31,12 @@ public class Login_epe_07 {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public Login_epe_07(String newEmail, String newPassword) {
+		super();
+		this.email = newEmail;
+		this.password = newPassword;
 	}	
 
+	public Login_epe_07() {}
 }

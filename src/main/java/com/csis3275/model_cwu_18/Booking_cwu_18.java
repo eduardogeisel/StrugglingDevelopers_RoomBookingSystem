@@ -95,10 +95,10 @@ public class Booking_cwu_18 {
 		this.dateTime = dateTime;
 	}
 
-	public Booking_cwu_18(int booking_id, Date dateTime, LocalTime startTime, LocalTime endTime, String title,
+	public Booking_cwu_18(Date dateTime, LocalTime startTime, LocalTime endTime, String title,
 			String description, int user_id, String room_id) {
 
-		this.booking_id = booking_id;
+		this.booking_id = getBooking_id();
 		this.dateTime = dateTime;
 		this.startTime = startTime;
 		this.endTime = endTime;
