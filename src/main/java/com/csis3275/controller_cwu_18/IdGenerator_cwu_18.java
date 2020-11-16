@@ -24,12 +24,10 @@ public class IdGenerator_cwu_18 {
 		public static int getRandomBookingID() {
 			// It will generate 6 digit random Number.
 			// from 0 to 999999
-			Random rnd = new Random();
-			int number = rnd.nextInt(999999);
-
-			// this will convert any number sequence into 6 character.
-			String temp = String.format("%06d", number);
-			return Integer.parseInt(temp);
+			Random rand = new Random();
+	        int result= rand.nextInt(1000000);
+	        return result;
+			
 			
 		}
 }
