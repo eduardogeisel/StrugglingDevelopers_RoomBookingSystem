@@ -9,6 +9,8 @@ target/
 local.properties
 .loadpath
 .recommenders
+.pom.propertires
+.MANIFEST.MF
 
 # External tool builders
 .externalToolBuilders/
