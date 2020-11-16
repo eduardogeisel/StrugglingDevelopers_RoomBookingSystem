@@ -81,4 +81,19 @@ public class Booking_cwu_18 {
 	public void setDateTime(Date dateTime) {
 		this.dateTime = dateTime;
 	}
+	public Booking_cwu_18(int booking_id, Date dateTime, LocalTime startTime, LocalTime endTime, String title,
+			String description, int user_id, String room_id) {
+		
+		this.booking_id = booking_id;
+		this.dateTime = dateTime;
+		this.startTime = startTime;
+		this.endTime = endTime;
+		this.title = title;
+		this.description = description;
+		this.user_id = user_id;
+		this.room_id = room_id;
+	}
+	public Booking_cwu_18() {}
+	
+	
 }
