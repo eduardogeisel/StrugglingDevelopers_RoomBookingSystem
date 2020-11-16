@@ -14,6 +14,7 @@
 </head>
 <body>
 
+<!-- Booking confirmation feature view -->
 	<div class="container">
 		<h1>Show Booking Confirmation</h1>
 		<hr />

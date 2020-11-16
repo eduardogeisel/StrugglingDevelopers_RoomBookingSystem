@@ -94,7 +94,7 @@ public class BookingController_cwu_18 {
 
 	}
 
-	// Confirm booking feature
+	// Confirm booking feature mappings
 
 	@GetMapping("/confirmBooking")
 	public String confirmBooking(@RequestParam(required = true) int id, Model model) {
