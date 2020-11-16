@@ -47,7 +47,7 @@
 		<!-- **************MJ*************** Changed below id to booking id and passed to confirm booking -->
 
 		<form:form
-			action="${pageContext.request.contextPath}/confirmBooking/?id=${bookingId}"
+			action="${pageContext.request.contextPath}/confirmBooking/?id=${userId}"
 			cssClass="form-horizontal" method="post" modelAttribute="booking">
 			<div class="form-group">
 				<label for="title" class="col-md-3 controllabel">Title:</label>
@@ -102,7 +102,7 @@
 			</div>
 			<div class="invisible">
 				<div class="col-6">
-					<form:input class="form-control" value="${bookingId}"
+					<form:input class="form-control"
 						id="booking_id" path="booking_id" />
 				</div>
 			</div>
