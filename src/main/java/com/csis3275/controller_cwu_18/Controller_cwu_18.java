@@ -46,7 +46,7 @@ public class Controller_cwu_18 {
 		//int userId = 200774284;
 		model.addAttribute("userId", id);
 		// Add bookingId
-		String bookingId = getRandomBookingID();
+		String bookingId = IdGenerator_cwu_18.getRandomBookingID();
 		model.addAttribute("bookingId", bookingId);
 		return "bookRoom_cwu_18";
 	}
@@ -281,16 +281,7 @@ public class Controller_cwu_18 {
 		return "redirect:/login_epe_07";
 	}
 
-	// Random Number Generator
-	public static String getRandomBookingID() {
-		// It will generate 6 digit random Number.
-		// from 0 to 999999
-		Random rnd = new Random();
-		int number = rnd.nextInt(999999);
-
-		// this will convert any number sequence into 6 character.
-		return String.format("%06d", number);
-	}
+	
 
 	// Sign up feature
 	@ModelAttribute("user_sho_38")
@@ -315,7 +306,7 @@ public class Controller_cwu_18 {
 		} else {
 			String successMessage = "Successfully Sign Up";
 			model.addAttribute("successMessage", successMessage);
-			newUser.setUser_id(generateUserId(newUser));
+			newUser.setUser_id(IdGenerator_cwu_18.generateUserId(newUser));
 			daoImpl.register(newUser);
 		}
 
@@ -323,19 +314,7 @@ public class Controller_cwu_18 {
 
 	}
 
-	public int generateUserId(User_sho_38 user) {
-
-		int userId = 0;
-		if (user.getUser_type() == 1) {
-			userId = 100000000 + Integer.parseInt(getRandomBookingID());
-
-		} else if (user.getUser_type() == 2) {
-			userId = 200000000 + Integer.parseInt(getRandomBookingID());
-
-		}
-		return userId;
-
-	}
+	
 	
 	
 	/**
@@ -360,7 +339,7 @@ public class Controller_cwu_18 {
 		
 		
 		model.addAttribute("userId", id);		
-		String bookingId = getRandomBookingID();
+		String bookingId = IdGenerator_cwu_18.getRandomBookingID();
 		model.addAttribute("bookingId", bookingId);
 		return "bookingLimitation_epe_07";
 	}
