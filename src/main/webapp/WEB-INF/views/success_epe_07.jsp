@@ -36,6 +36,8 @@
 						Room</a></li>
 				<li class="nav-item"><a class="nav-link"
 					href="${pageContext.request.contextPath}/bookingCalendar/?id=${userId}">Calendar</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath}/roomPhotos/?id=${userId}">Room Photos</a></li>
 
 			</ul>
 		</div>
