@@ -6,23 +6,57 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Group Description</title>
+<title>Room Photos</title>
 
 </head>
 <body>
-	<h1>Room Photos</h1>
+	<h1>Room Photos</h1><BR>
+	<h3>There are four types of rooms offered for students and faculty to book. They are regular classrooms, conference rooms, labs and study rooms.</h3>
 	<table>
 		<tr>
-			<td><img src="<c:url value='/resources/${roomPhotos.imgSrc}'/>"
-				alt="Room photo" width="250" height="300" /></td>
+			<td><img src="<c:url value='/resources/${roomPhotos.regularClassroom}'/>"
+				alt="Regular classroom photo" width="400" height="300" /></td>
 			<td>
 		</tr>
 		<tr>
-			<td>Room photo</td>
+			<td>Classroom photo</td>
 		</tr>
 	</table>
-	<label for="txtGroup">Description:</label>
-	<p id="txtGroup" name="txtGroup">Hello world</p>
+	
+	<p id="txtGroup" name="txtGroup">The regular classrooms are the most common rooms that can be booked. Each classroom has a different in equipments that they offer, but the layout looks pretty much like the picture above.</p>
+	
+	<table>
+		<tr>
+			<td><img src="<c:url value='/resources/${roomPhotos.conference}'/>"
+				alt="Conference room photo" width="400" height="300" /></td>
+			<td>
+		</tr>
+		<tr>
+			<td>Conference room photo</td>
+		</tr>
+	</table>
+	
+	<table>
+		<tr>
+			<td><img src="<c:url value='/resources/${roomPhotos.lab}'/>"
+				alt="Lab room photo" width="400" height="300" /></td>
+			<td>
+		</tr>
+		<tr>
+			<td>Lab room photo</td>
+		</tr>
+	</table>
+	
+	<table>
+		<tr>
+			<td><img src="<c:url value='/resources/${roomPhotos.studyRoom}'/>"
+				alt="Study room photo" width="400" height="300" /></td>
+			<td>
+		</tr>
+		<tr>
+			<td>Study room photo</td>
+		</tr>
+	</table>
 
 </body>
 </html>
