@@ -23,7 +23,7 @@
 		</tr>
 	</table>
 	
-	<p id="txtGroup" name="txtGroup">The regular classrooms are the most common rooms that can be booked. Each classroom has a different in equipments that they offer, but the layout looks pretty much like the picture above.</p>
+	<p id="txtGroup" name="txtGroup">The regular classrooms are the most common rooms that can be booked. Each classroom has a difference in equipments that they offer, but the layout looks pretty much like the picture above.</p>
 	
 	<table>
 		<tr>
@@ -50,7 +50,7 @@
 	<table>
 		<tr>
 			<td><img src="<c:url value='/resources/${roomPhotos.studyRoom}'/>"
-				alt="Study room photo" width="800" height="400" /></td>
+				alt="Study room photo" width="800" height="500" /></td>
 			<td>
 		</tr>
 		<tr>

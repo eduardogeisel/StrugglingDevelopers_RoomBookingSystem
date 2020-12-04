@@ -17,7 +17,7 @@ public class ViewRoomPhotos_epe_07 {
 		return "lab.jpg";
 	}
 	public String getStudyRoom() {
-		return "study.png";
+		return "study.jpg";
 	}
 	
 	
