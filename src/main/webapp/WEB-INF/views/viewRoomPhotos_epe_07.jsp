@@ -15,7 +15,7 @@
 	<table>
 		<tr>
 			<td><img src="<c:url value='/resources/${roomPhotos.regularClassroom}'/>"
-				alt="Regular classroom photo" width="400" height="300" /></td>
+				alt="Regular classroom photo" width="800" height="600" /></td>
 			<td>
 		</tr>
 		<tr>
@@ -28,7 +28,7 @@
 	<table>
 		<tr>
 			<td><img src="<c:url value='/resources/${roomPhotos.conference}'/>"
-				alt="Conference room photo" width="400" height="300" /></td>
+				alt="Conference room photo" width="800" height="600" /></td>
 			<td>
 		</tr>
 		<tr>
@@ -39,7 +39,7 @@
 	<table>
 		<tr>
 			<td><img src="<c:url value='/resources/${roomPhotos.lab}'/>"
-				alt="Lab room photo" width="400" height="300" /></td>
+				alt="Lab room photo" width="800" height="600" /></td>
 			<td>
 		</tr>
 		<tr>
@@ -50,7 +50,7 @@
 	<table>
 		<tr>
 			<td><img src="<c:url value='/resources/${roomPhotos.studyRoom}'/>"
-				alt="Study room photo" width="400" height="300" /></td>
+				alt="Study room photo" width="800" height="400" /></td>
 			<td>
 		</tr>
 		<tr>
