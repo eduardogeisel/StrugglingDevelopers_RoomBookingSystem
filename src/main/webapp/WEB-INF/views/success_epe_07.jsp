@@ -21,7 +21,8 @@
 			data-target="#navbarNav" aria-controls="navbarNav"
 			aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
-		</button><br>
+		</button>
+		<br>
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav">
 
@@ -36,10 +37,13 @@
 						Room</a></li>
 				<li class="nav-item"><a class="nav-link"
 					href="${pageContext.request.contextPath}/bookingCalendar/?id=${userId}">Calendar</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath}/contactus/?id=${userId}">Contact Us</a></li>
 
 			</ul>
 		</div>
-	</nav><br>
+	</nav>
+	<br>
 	<table>
 
 		<tr>
