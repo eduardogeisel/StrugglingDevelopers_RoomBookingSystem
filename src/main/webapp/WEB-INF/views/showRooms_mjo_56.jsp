@@ -27,7 +27,7 @@
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav">
 					<li class="nav-item"><a class="nav-link"
-						href="${pageContext.request.contextPath}/bookRoom/?id=${user.user_id}">Book
+						href="${pageContext.request.contextPath}/bookRoom/?id=${user_id}">Book
 							Room</a></li>
 				</ul>
 			</div>
