@@ -23,7 +23,7 @@
 					<h2>Contact Us</h2>
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item"><a
-							href="${pageContext.request.contextPath}/bookRoom/?id=${userId}">back</a></li>
+							href="${pageContext.request.contextPath}/bookRoom/?id=${userId}">Home</a></li>
 						<li class="breadcrumb-item active">Contact Us</li>
 					</ol>
 				</div>
@@ -51,7 +51,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6">
-					<form action="">
+					<form action="${pageContext.request.contextPath}/comment/?id=${userId}" method="post">
 						<div class="form-row">
 							<div class="form-group col-md-6">
 								<input type="text" class="form-control"
@@ -71,7 +71,7 @@
 
 							</div>
 							<div class="form-group col-md-6">
-								<select class="form-control" name="" id="">
+								<select class="form-control">
 									<option selected>Country</option>
 									<option>India</option>
 									<option>America</option>
@@ -87,7 +87,12 @@
 						</div>
 						<div class="form-row">
 							<div class="form-group col-md-12">
-								<textarea class="form-control" rows="3"></textarea>
+								<input type="number" class="form-control" placeholder="user_id" id="${userId}" value="${userId}">
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-12">
+								<textarea class="form-control" rows="3" id="content" name="content" required></textarea>
 							</div>
 						</div>
 						<div class="form-row">

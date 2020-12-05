@@ -22,5 +22,12 @@ public int getUser_id() {
 public void setUser_id(int user_id) {
 	this.user_id = user_id;
 }
+public Comment_cwu_18(int comment_id, String content, int user_id) {
+	this.comment_id = comment_id;
+	this.content = content;
+	this.user_id = user_id;
+}
+
+public Comment_cwu_18() {};
 
 }

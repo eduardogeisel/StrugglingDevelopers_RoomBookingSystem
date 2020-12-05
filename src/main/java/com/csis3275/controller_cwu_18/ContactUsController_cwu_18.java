@@ -8,6 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.csis3275.dao_cwu_18.DAOImpl_cwu_18;
@@ -18,6 +21,8 @@ public class ContactUsController_cwu_18 {
 
 	@Autowired
 	DAOImpl_cwu_18 daoImpl;
+	
+	
 
 	// Add Contact Us Feature
 	@ModelAttribute("contact")
@@ -29,6 +34,20 @@ public class ContactUsController_cwu_18 {
 	@GetMapping("/contactus")
 	public String writeComments(@RequestParam(required = true) int id, Model model) {
 		model.addAttribute("userId", id);
+		return "ContactUs_cwu_18";
+	}
+	
+	@PostMapping("/comment")
+	public String getComments(@RequestParam(required = true) int id, @RequestParam(required=false,name="content") String content, Model model) {
+		//daoImpl.createComment(comment);
+		model.addAttribute("userId", id);
+		int comment_id = IdGenerator_cwu_18.getRandomBookingID();
+		Comment_cwu_18 newComment = new Comment_cwu_18(comment_id, content, id);
+		System.out.print("String value:" + newComment.getContent());
+		if(newComment != null) {
+			daoImpl.createComment(newComment);
+		}
+		
 		return "ContactUs_cwu_18";
 	}
 
