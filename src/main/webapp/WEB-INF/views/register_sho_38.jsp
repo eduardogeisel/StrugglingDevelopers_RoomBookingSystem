@@ -10,10 +10,18 @@
 	rel="stylesheet">
 <script src="<c:url value="/static/js/jquery-1.11.1.min.js" />"></script>
 <script src="<c:url value="/static/js/bootstrap.min.js" />"></script>
+<style>
+.form-center {
+  width: 100%;
+  max-width: 1000px;
+  padding: 15px;
+  margin: auto;
+}
+</style>
 </head>
 <body>
 	<h1>Sign up</h1>
-
+<div class="form-center">
 	<form:form action="${pageContext.request.contextPath}/register_sho_38/"
 		cssClass="form-horizontal" method="post" modelAttribute="user_sho_38">
 		<div class="invisible">
@@ -81,6 +89,7 @@
 			</div>
 		</div>
 	</form:form>
+	</div>>
 	<!-- 
 	
 	<form:form action="${pageContext.request.contextPath}/register_sho_38/"
