@@ -14,28 +14,28 @@
 </head>
 <body>
 
-	<div class="container">
-		<h1>Rooms</h1>
-		<hr />
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<a class="navbar-brand" href="#">Book Room System</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse"
-				data-target="#navbarNav" aria-controls="navbarNav"
-				aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav">
-					<li class="nav-item"><a class="nav-link"
-						href="${pageContext.request.contextPath}/bookRoom/?id=${user.user_id}">Book
-							Room</a></li>
-				</ul>
+
+	<section class="breadcrumbs-section">
+		<div class="container pl-3 p-sm-3">
+			<div class="row">
+				<div class="col-12">
+					<h2>Rooms</h2>
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a
+							href="${pageContext.request.contextPath}/bookRoom/?id=${userId}">Home</a></li>
+						<li class="breadcrumb-item active">Calendar</li>
+					</ol>
+				</div>
 			</div>
-		</nav>
+		</div>
+
+	</section>
+	<div class="container">
 		<h4>Choose an equipment to check which rooms have the equipment
 			available.</h4>
 		<div class="form-group">
-			<form:form action="${pageContext.request.contextPath}/filterRooms/"
+			<form:form
+				action="${pageContext.request.contextPath}/filterRooms/?id=${userId}"
 				cssClass="form-horizontal" method="post" modelAttribute="rooms">
 
 				<!-- Select equipment to filter -->

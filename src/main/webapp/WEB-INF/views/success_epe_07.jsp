@@ -33,7 +33,7 @@
 					href="${pageContext.request.contextPath}/bookRoom/?id=${userId}">Book
 						Room</a></li>
 				<li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath}/showRooms/">Filter
+					href="${pageContext.request.contextPath}/showRooms/?id=${userId}">Filter
 						Room</a></li>
 				<li class="nav-item"><a class="nav-link"
 					href="${pageContext.request.contextPath}/bookingCalendar/?id=${userId}">Calendar</a></li>

@@ -65,11 +65,11 @@ body {
 </style>
 </head>
 <body>
-		<section class="breadcrumbs-section">
+	<section class="breadcrumbs-section">
 		<div class="container pl-3 p-sm-3">
 			<div class="row">
 				<div class="col-12">
-					<h2>Contact Us</h2>
+					<h2>Calendar</h2>
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item"><a
 							href="${pageContext.request.contextPath}/bookRoom/?id=${userId}">Home</a></li>
@@ -81,7 +81,7 @@ body {
 
 	</section>
 
-			
+
 	<div id='calendar'></div>
 </body>
 
@@ -116,7 +116,7 @@ body {
 			</div>
 		</div>
 	</div>
-	>
+
 
 	<div class="container-fluid bottom-footer pt-2">
 		<div class="row">

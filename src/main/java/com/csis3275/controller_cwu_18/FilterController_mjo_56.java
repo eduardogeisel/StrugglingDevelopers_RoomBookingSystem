@@ -29,16 +29,17 @@ public class FilterController_mjo_56 {
 
 	// Show all the rooms
 	@GetMapping("/showRooms")
-	public String showRooms(HttpSession session, Model model) {
+	public String showRooms(@RequestParam(required = true) int id, Model model) {
+		model.addAttribute("userId", id);
 		List<Rooms_mjo_56> rooms = daoImpl.getAllRooms();
 		model.addAttribute("rooms", rooms);
 		return "showRooms_mjo_56";
 	}
 
 	@PostMapping("/filterRooms")
-	public String filterRooms(@ModelAttribute("rooms") Rooms_mjo_56 filteredRoom, @RequestParam String equipment,
+	public String filterRooms(@ModelAttribute("rooms") Rooms_mjo_56 filteredRoom, @RequestParam String equipment, @RequestParam int id,
 			Model model) {
-
+		model.addAttribute("userId", id);
 		List<Rooms_mjo_56> rooms = daoImpl.getFilteredRooms(equipment);
 		model.addAttribute("rooms", rooms);
 		return "showRooms_mjo_56";
