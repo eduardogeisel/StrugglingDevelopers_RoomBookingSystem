@@ -41,7 +41,7 @@
 	</nav>
 
 	<form:form
-		action="${pageContext.request.contextPath}/inputEmail/?id=${userId}"
+		action="${pageContext.request.contextPath}/inputEmail/?id=${booking_id}"
 		cssClass="form-horizontal" method="get" modelAttribute="booking">
 		<div class="form-group">
 			<h1>Show Booking Confirmation</h1>
@@ -68,15 +68,14 @@
 					<td>${confirmation.title}</td>
 				</tr>
 			</table>
-
-			<div class="col-md-offset-3 col-md-9">
-				<form:button class="btn btn-primary" onclick="window.print()">Download Booking
-					Confirmation</form:button>
-			</div>
 			<div class="col-md-offset-3 col-md-9">
 				<form:button class="btn btn-primary">Send Email</form:button>
 			</div>
 		</div>
 	</form:form>
+	<div class="col-md-offset-3 col-md-9">
+		<button class="btn btn-primary" onclick="window.print()">Download
+			Booking Confirmation</button>
+	</div>
 </body>
 </html>
