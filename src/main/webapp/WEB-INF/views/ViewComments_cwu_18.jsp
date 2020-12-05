@@ -19,25 +19,15 @@
 			<tr>
 				<td>Title</td>
 				<td>Room ID</td>
-				<td>Date</td>
-				<td>Start Time</td>
-				<td>End Time</td>
+				<td>User_id</td>
+
 				
 			</tr>
 			<c:forEach var="comment" items="${comments}">
 				<tr>
-					<td>${comment.title}</td>
-					<td>${booking.room_id}</td>
-					<td>${booking.dateTime}</td>
-					<td>${booking.startTime}</td>
-					<td>${booking.endTime}</td>
-
-					<!-- <td><a
-						href="${pageContext.request.contextPath}/editBooking/?id=${booking.booking_id}">Edit</a></td>
-					
-					-->
-					<td><a
-						href="${pageContext.request.contextPath}/deleteBooking/?id=${booking.booking_id}">Delete</a></td>
+					<td>${comment.comment_id}</td>
+					<td>${comment.content}</td>
+					<td>${comment.user_id}</td>
 				</tr>
 			</c:forEach>
 

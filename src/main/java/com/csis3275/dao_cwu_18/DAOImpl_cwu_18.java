@@ -9,6 +9,8 @@ import org.springframework.stereotype.Component;
 
 import com.csis3275.model_cwu_18.BookingMapper_cwu_18;
 import com.csis3275.model_cwu_18.Booking_cwu_18;
+import com.csis3275.model_cwu_18.CommentMapper_cwu_18;
+import com.csis3275.model_cwu_18.Comment_cwu_18;
 import com.csis3275.model_cwu_18.LoginMapper_epe_07;
 import com.csis3275.model_cwu_18.Login_epe_07;
 import com.csis3275.model_cwu_18.RoomsMapper_mjo_56;
@@ -51,6 +53,9 @@ public class DAOImpl_cwu_18 {
 	private final String SQL_FIND_REGISTERED_USER = "SELECT * FROM USERS WHERE email = ?";
 	private final String SQL_GET_USERS = "SELECT * FROM USERS";
 	private final String SQL_GET_EMAILS = "SELECT EMAIL FROM USERS";
+	
+	//View Comments
+	private final String SQL_GET_COMMENTS = "SELECT * FROM COMMENTS";
 
 	@Autowired
 	public DAOImpl_cwu_18(DataSource dataSource) {
@@ -59,6 +64,9 @@ public class DAOImpl_cwu_18 {
 
 	public List<Booking_cwu_18> getAllBookings() {
 		return jdbcTemplate.query(SQL_GET_ALL, new BookingMapper_cwu_18());
+	}
+	public List<Comment_cwu_18> getAllComments(){
+		return jdbcTemplate.query(SQL_GET_COMMENTS, new CommentMapper_cwu_18());
 	}
 
 	// insert new booking into database
