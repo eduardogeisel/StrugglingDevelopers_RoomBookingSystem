@@ -25,18 +25,9 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav">
-
 				<li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath}/showBookings/?id=${userId}">Show
-						Bookings</a></li>
-				<li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath}/bookRoom/?id=${userId}">Book
+					href="${pageContext.request.contextPath}/showRooms/?id=${user.user_id}">Filter
 						Room</a></li>
-				<li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath}/showRooms/">Filter
-						Room</a></li>
-				<li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath}/bookingCalendar/?id=${userId}">Calendar</a></li>
 
 			</ul>
 		</div>
