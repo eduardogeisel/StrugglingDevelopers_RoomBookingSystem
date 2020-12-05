@@ -4,11 +4,27 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Login</title>
+
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon"
+	href="https://getbootstrap.com/docs/4.1/assets/img/favicons/favicon.ico">
+
+<title>Signin Template for Bootstrap</title>
+
+<link rel="canonical"
+	href="https://getbootstrap.com/docs/4.1/examples/sign-in/">
+<!-- Bootstrap core CSS -->
 <link href="<c:url value="/static/css/bootstrap.min.css" />"
 	rel="stylesheet">
+<!-- Custom styles for this template -->
 <link href="<c:url value="/static/css/signin.css" />" rel="stylesheet">
+<script
+	src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.js"></script>
+
+
 <script
 	src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.js"></script>
 <script src="<c:url value="/static/js/jquery-1.11.1.min.js" />"></script>
@@ -17,15 +33,13 @@
 </head>
 <body class="text-center">
 
-
-
-	<hr />
 	<c:if test="${ failureMessage !=null }">
 		<div class="alert alert-danger" role="alert">${failureMessage}</div>
 	</c:if>
 	<c:if test="${ successMessage !=null }">
 		<div class="alert alert-success" role="alert">${successMessage}</div>
 	</c:if>
+
 	<form:form method="POST" class="form-signin"
 		action="${pageContext.request.contextPath}/success_epe_07"
 		modelAttribute="login_epe_07">
