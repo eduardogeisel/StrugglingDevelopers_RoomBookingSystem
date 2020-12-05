@@ -2,6 +2,11 @@
 https://examples.javacodegeeks.com/enterprise-java/spring/mvc/spring-mvc-login-example/
 https://o7planning.org/en/10305/simple-login-java-web-application-using-spring-mvc-spring-security-and-spring-jdbc
 
+//Email References
+https://www.codejava.net/frameworks/spring/sending-e-mail-with-spring-mvc
+https://examples.javacodegeeks.com/enterprise-java/spring/mvc/sending-email-spring-mvc-example/
+https://stackoverflow.com/questions/49685280/send-email-through-spring-mvc-application
+
 //Image References
 https://www.kmbr.com/wp-content/uploads/2019/05/DouglasCollege-360-1600x1067.jpg
 https://www.kmbr.com/wp-content/uploads/2019/05/DouglasCollege-080_C-1600x1072.jpg
