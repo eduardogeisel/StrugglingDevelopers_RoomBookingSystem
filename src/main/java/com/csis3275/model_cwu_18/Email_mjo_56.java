@@ -28,9 +28,9 @@ public class Email_mjo_56 {
 		props.put("mail.setup.auth", "true");
 		
 		props.put("mail.smtp.host", "smtp.gmail.com");
-		props.put("mail.setup.port", 587);
+		props.put("mail.setup.port", 465);
 		
-		props.put("mail.smtp.socketFactory.port", 587);
+		props.put("mail.smtp.socketFactory.port", 465);
 		props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
 		
 		//props.put("mail.smtp.timeout", 15000);
