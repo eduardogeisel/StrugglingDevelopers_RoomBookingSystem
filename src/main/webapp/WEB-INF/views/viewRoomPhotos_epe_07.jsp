@@ -16,22 +16,21 @@
 <body>
 	<!--<h1>Room Photos</h1><BR>-->
 	
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="#">Book Room System</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse"
-			data-target="#navbarNav" aria-controls="navbarNav"
-			aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarNav">
-			<ul class="navbar-nav">
-				<li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath}/showRooms/?id=${user.user_id}">Filter
-						Room</a></li>
-
-			</ul>
+	<section class="breadcrumbs-section">
+		<div class="container pl-3 p-sm-3">
+			<div class="row">
+				<div class="col-12">
+					<h2>Room Photos</h2>
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a
+							href="${pageContext.request.contextPath}/bookRoom/?id=${userId}">Home</a></li>
+						<li class="breadcrumb-item active">Room</li>
+					</ol>
+				</div>
+			</div>
 		</div>
-	</nav>
+
+	</section>
 	
 	<h5>There are four types of rooms offered for students and faculty to book. They are regular classrooms, conference rooms, labs and study rooms.</h5>
 	<table>

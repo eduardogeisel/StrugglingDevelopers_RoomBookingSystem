@@ -42,8 +42,7 @@
 			headerToolbar : {
 				right : 'prev,next today',
 				center : 'title',
-				left : 'dayGridMonth,timeGridWeek,timeGridDay'
-			}, events});
+				left : 'dayGridMonth,timeGridWeek,timeGridDay' }, events});
 		
 		
 		//create calendar
