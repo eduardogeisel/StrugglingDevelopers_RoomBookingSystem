@@ -43,7 +43,6 @@ public class ContactUsController_cwu_18 {
 		model.addAttribute("userId", id);
 		int comment_id = IdGenerator_cwu_18.getRandomBookingID();
 		Comment_cwu_18 newComment = new Comment_cwu_18(comment_id, content, id);
-		System.out.print("String value:" + newComment.getContent());
 		if(newComment != null) {
 			daoImpl.createComment(newComment);
 		}

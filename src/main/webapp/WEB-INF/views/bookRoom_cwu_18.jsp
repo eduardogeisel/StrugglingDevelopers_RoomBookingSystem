@@ -42,6 +42,9 @@
 					href="${pageContext.request.contextPath}/contactus/?id=${userId}">Contact
 						Us</a></li>
 
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath}/sessionEnd">Logout</a></li>
+
 
 			</ul>
 		</div>
