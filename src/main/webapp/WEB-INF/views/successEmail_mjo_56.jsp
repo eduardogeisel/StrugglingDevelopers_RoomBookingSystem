@@ -39,43 +39,9 @@
 			</ul>
 		</div>
 	</nav>
-
-	<form:form
-		action="${pageContext.request.contextPath}/inputEmail/?id=${booking_id}"
-		cssClass="form-horizontal" method="get" modelAttribute="booking">
-		<div class="form-group">
-			<h1>Show Booking Confirmation</h1>
-			<hr />
-			<table class="table table-striped table-bordered">
-
-				<tr>
-					<td>Room ID</td>
-					<td>Booking ID</td>
-					<td>User ID</td>
-					<td>Date</td>
-					<td>Start Time</td>
-					<td>End Time</td>
-					<td>Title</td>
-				</tr>
-
-				<tr>
-					<td>${confirmation.room_id}</td>
-					<td>${confirmation.booking_id}</td>
-					<td>${confirmation.user_id}</td>
-					<td>${confirmation.dateTime}</td>
-					<td>${confirmation.startTime}</td>
-					<td>${confirmation.endTime}</td>
-					<td>${confirmation.title}</td>
-				</tr>
-			</table>
-			<div class="col-md-offset-3 col-md-9">
-				<form:button class="btn btn-primary">Send Email</form:button>
-			</div>
-		</div>
-	</form:form>
-	<div class="col-md-offset-3 col-md-9">
-		<button class="btn btn-primary" onclick="window.print()">Download
-			Booking Confirmation</button>
+	<div class="container">
+		<h1>Email sent successfully!</h1>
+		<hr />
 	</div>
 </body>
 </html>

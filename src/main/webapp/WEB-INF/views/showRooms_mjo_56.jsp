@@ -15,6 +15,7 @@
 <body>
 
 
+
 	<section class="breadcrumbs-section">
 		<div class="container pl-3 p-sm-3">
 			<div class="row">
@@ -28,7 +29,6 @@
 				</div>
 			</div>
 		</div>
-
 	</section>
 	<div class="container">
 		<h4>Choose an equipment to check which rooms have the equipment
