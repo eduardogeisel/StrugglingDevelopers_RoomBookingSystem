@@ -11,3 +11,8 @@
     - Download Booking Confirmation
     - Calendar
     - Unit Testing for Booking Entity
+
+## 3.1 Release
+    - View Room pictures feature
+    - Contact us (Feedback) feature
+    - Email notification feature
