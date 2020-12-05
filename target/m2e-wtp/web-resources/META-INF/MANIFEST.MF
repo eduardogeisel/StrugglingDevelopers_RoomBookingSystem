@@ -1,9 +1,5 @@
 Manifest-Version: 1.0
-<<<<<<< HEAD
 Built-By: eduar
-=======
-Built-By: joshi
->>>>>>> 2b1f163993ca6f84ecf0883411f8cfc08c4388d8
 Build-Jdk: 14.0.2
 Created-By: Maven Integration for Eclipse
 
