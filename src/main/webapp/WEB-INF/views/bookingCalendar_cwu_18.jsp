@@ -65,31 +65,23 @@ body {
 </style>
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="#">Book Room System</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse"
-			data-target="#navbarNav" aria-controls="navbarNav"
-			aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarNav">
-			<ul class="navbar-nav">
-
-				<li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath}/showBookings/?id=${userId}">Show
-						Bookings</a></li>
-				<li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath}/bookRoom/?id=${userId}">Book
-						Room</a></li>
-				<li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath}/showRooms/">Filter
-						Room</a></li>
-				<li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath}/bookingCalendar/?id=${userId}">Calendar</a></li>
-
-			</ul>
+		<section class="breadcrumbs-section">
+		<div class="container pl-3 p-sm-3">
+			<div class="row">
+				<div class="col-12">
+					<h2>Contact Us</h2>
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a
+							href="${pageContext.request.contextPath}/bookRoom/?id=${userId}">Home</a></li>
+						<li class="breadcrumb-item active">Calendar</li>
+					</ol>
+				</div>
+			</div>
 		</div>
-	</nav>
+
+	</section>
+
+			
 	<div id='calendar'></div>
 </body>
 
