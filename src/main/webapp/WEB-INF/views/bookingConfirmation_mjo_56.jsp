@@ -14,34 +14,69 @@
 </head>
 <body>
 
-	<div class="container">
-		<h1>Show Booking Confirmation</h1>
-		<hr />
-		<table class="table table-striped table-bordered">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="#">Book Room System</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarNav" aria-controls="navbarNav"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
 
-			<tr>
-				<td>Room ID</td>
-				<td>Booking ID</td>
-				<td>User ID</td>
-				<td>Date</td>
-				<td>Start Time</td>
-				<td>End Time</td>
-				<td>Title</td>
-			</tr>
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath}/showBookings/?id=${userId}">Show
+						Bookings</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath}/bookRoom/?id=${userId}">Book
+						Room</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath}/showRooms/">Filter
+						Room</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath}/bookingCalendar/?id=${userId}">Calendar</a></li>
 
-			<tr>
-				<td>${confirmation.room_id}</td>
-				<td>${confirmation.booking_id}</td>
-				<td>${confirmation.user_id}</td>
-				<td>${confirmation.dateTime}</td>
-				<td>${confirmation.startTime}</td>
-				<td>${confirmation.endTime}</td>
-				<td>${confirmation.title}</td>
-			</tr>
-		</table>
-		
-		<div class="col-md-offset-3 col-md-9">
-			<button onclick="window.print()">Download Booking Confirmation</button>
+			</ul>
 		</div>
+	</nav>
+
+	<form:form
+		action="${pageContext.request.contextPath}/inputEmail/?id=${userId}"
+		cssClass="form-horizontal" method="get" modelAttribute="booking">
+		<div class="form-group">
+			<h1>Show Booking Confirmation</h1>
+			<hr />
+			<table class="table table-striped table-bordered">
+
+				<tr>
+					<td>Room ID</td>
+					<td>Booking ID</td>
+					<td>User ID</td>
+					<td>Date</td>
+					<td>Start Time</td>
+					<td>End Time</td>
+					<td>Title</td>
+				</tr>
+
+				<tr>
+					<td>${confirmation.room_id}</td>
+					<td>${confirmation.booking_id}</td>
+					<td>${confirmation.user_id}</td>
+					<td>${confirmation.dateTime}</td>
+					<td>${confirmation.startTime}</td>
+					<td>${confirmation.endTime}</td>
+					<td>${confirmation.title}</td>
+				</tr>
+			</table>
+
+			<div class="col-md-offset-3 col-md-9">
+				<form:button class="btn btn-primary" onclick="window.print()">Download Booking
+					Confirmation</form:button>
+			</div>
+			<div class="col-md-offset-3 col-md-9">
+				<form:button class="btn btn-primary">Send Email</form:button>
+			</div>
+		</div>
+	</form:form>
 </body>
 </html>
