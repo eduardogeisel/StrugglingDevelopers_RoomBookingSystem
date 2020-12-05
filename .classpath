@@ -20,7 +20,6 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-14">
 		<attributes>
-			<attribute name="module" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
@@ -31,11 +30,11 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
-	<classpathentry kind="lib" path="C:/temp/seleniumjars/byte-buddy-1.8.15.jar"/>
-	<classpathentry kind="lib" path="C:/temp/seleniumjars/client-combined-3.141.59.jar"/>
-	<classpathentry kind="lib" path="C:/temp/seleniumjars/commons-exec-1.3.jar"/>
-	<classpathentry kind="lib" path="C:/temp/seleniumjars/guava-25.0-jre.jar"/>
-	<classpathentry kind="lib" path="C:/temp/seleniumjars/okhttp-3.11.0.jar"/>
-	<classpathentry kind="lib" path="C:/temp/seleniumjars/okio-1.14.0.jar"/>
+	<classpathentry kind="lib" path="C:/Temp/seleniumjars/byte-buddy-1.8.15.jar"/>
+	<classpathentry kind="lib" path="C:/Temp/seleniumjars/client-combined-3.141.59.jar"/>
+	<classpathentry kind="lib" path="C:/Temp/seleniumjars/commons-exec-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Temp/seleniumjars/guava-25.0-jre.jar"/>
+	<classpathentry kind="lib" path="C:/Temp/seleniumjars/okhttp-3.11.0.jar"/>
+	<classpathentry kind="lib" path="C:/Temp/seleniumjars/okio-1.14.0.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
