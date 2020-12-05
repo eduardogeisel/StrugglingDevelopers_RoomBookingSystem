@@ -12,11 +12,14 @@
 <script src="<c:url value="/static/js/bootstrap.min.js" />"></script>
 </head>
 
-<h1>Hello, ${userName}</h1><br><br><br>
+<h1>Hello, ${userName}</h1>
+<br>
+<br>
+<br>
 
 <body>
-	  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-	<!--  	<a class="navbar-brand" href="#">Book Room System</a>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<!--  	<a class="navbar-brand" href="#">Book Room System</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarNav" aria-controls="navbarNav"
 			aria-expanded="false" aria-label="Toggle navigation">
@@ -26,11 +29,18 @@
 			<ul class="navbar-nav">
 
 				<li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath}/bookingLimitation/?id=${userId}">Booking Limitation</a></li>
+					href="${pageContext.request.contextPath}/bookingLimitation/?id=${userId}">Booking
+						Limitation</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath}/viewcomments/?id=${userId}">View
+						Comments</a></li>
 
 			</ul>
 		</div>
-	</nav><br><br><br>
+	</nav>
+	<br>
+	<br>
+	<br>
 	<table>
 
 		<tr>
