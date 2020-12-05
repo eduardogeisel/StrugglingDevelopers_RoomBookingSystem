@@ -25,13 +25,14 @@ public class ContactUsController_cwu_18 {
 		return new Comment_cwu_18();
 	}
 
+	//user side to send the comments
 	@GetMapping("/contactus")
 	public String writeComments(@RequestParam(required = true) int id, Model model) {
 		model.addAttribute("userId", id);
 		return "ContactUs_cwu_18";
 	}
 
-	// admin
+	// admin side to view the comments from users
 	@GetMapping("/viewcomments")
 	public String viewComments(@RequestParam(required = true) int id, Model model) {
 		model.addAttribute("userId", id);

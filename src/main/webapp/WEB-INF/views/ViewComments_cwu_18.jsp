@@ -17,9 +17,9 @@
 		<hr />
 		<table class="table table-striped table-bordered">
 			<tr>
-				<td>Title</td>
-				<td>Room ID</td>
-				<td>User_id</td>
+				<td>Comment ID</td>
+				<td>Comments</td>
+				<td>User ID</td>
 
 				
 			</tr>

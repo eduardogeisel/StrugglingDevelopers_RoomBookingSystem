@@ -35,6 +35,9 @@
 						Room</a></li>
 				<li class="nav-item"><a class="nav-link"
 					href="${pageContext.request.contextPath}/bookingCalendar/?id=${userId}">Calendar</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath}/contactus/?id=${userId}">Contact
+						Us</a></li>
 
 			</ul>
 		</div>
@@ -102,8 +105,7 @@
 			</div>
 			<div class="invisible">
 				<div class="col-6">
-					<form:input class="form-control"
-						id="booking_id" path="booking_id" />
+					<form:input class="form-control" id="booking_id" path="booking_id" />
 				</div>
 			</div>
 

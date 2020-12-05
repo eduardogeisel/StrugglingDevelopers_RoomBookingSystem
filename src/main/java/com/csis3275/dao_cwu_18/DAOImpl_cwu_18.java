@@ -53,9 +53,10 @@ public class DAOImpl_cwu_18 {
 	private final String SQL_FIND_REGISTERED_USER = "SELECT * FROM USERS WHERE email = ?";
 	private final String SQL_GET_USERS = "SELECT * FROM USERS";
 	private final String SQL_GET_EMAILS = "SELECT EMAIL FROM USERS";
-	
-	//View Comments
+
+	// View Comments
 	private final String SQL_GET_COMMENTS = "SELECT * FROM COMMENTS";
+	private final String SQL_CREATE_COMMENT = "INSERT INTO COMMENTS (comment_id, content, user_id) VALUES (?,?,?)";
 
 	@Autowired
 	public DAOImpl_cwu_18(DataSource dataSource) {
@@ -64,9 +65,6 @@ public class DAOImpl_cwu_18 {
 
 	public List<Booking_cwu_18> getAllBookings() {
 		return jdbcTemplate.query(SQL_GET_ALL, new BookingMapper_cwu_18());
-	}
-	public List<Comment_cwu_18> getAllComments(){
-		return jdbcTemplate.query(SQL_GET_COMMENTS, new CommentMapper_cwu_18());
 	}
 
 	// insert new booking into database
@@ -93,8 +91,8 @@ public class DAOImpl_cwu_18 {
 	public Booking_cwu_18 getBookingById(int booking_id) {
 		return jdbcTemplate.queryForObject(SQL_FIND_BOOKING_BY_BOOKINGID, new Object[] { booking_id },
 				new BookingMapper_cwu_18());
-	}	
-	
+	}
+
 	public boolean deleteBooking(int idToDelete) {
 		return jdbcTemplate.update(SQL_DELETE_BOOKING, idToDelete) > 0;
 	}
@@ -132,7 +130,6 @@ public class DAOImpl_cwu_18 {
 		return jdbcTemplate.query(SQL_GET_USERID, new LoginMapper_epe_07(), email, password);
 	}
 
-	
 	// Filter feature
 	public List<Rooms_mjo_56> getAllRooms() {
 		return jdbcTemplate.query(SQL_GET_ROOMS, new RoomsMapper_mjo_56());
@@ -161,12 +158,22 @@ public class DAOImpl_cwu_18 {
 			return null;
 		}
 	}
-	
-	public List<User_sho_38> getAllUsers(){
+
+	public List<User_sho_38> getAllUsers() {
 		return jdbcTemplate.query(SQL_GET_USERS, new UserMapper_sho_38());
 	}
-	
-	public List<String> getAllEmails(){
-		return jdbcTemplate.queryForList(SQL_GET_EMAILS,String.class);
+
+	public List<String> getAllEmails() {
+		return jdbcTemplate.queryForList(SQL_GET_EMAILS, String.class);
+	}
+
+	// Comment DAO
+	public List<Comment_cwu_18> getAllComments() {
+		return jdbcTemplate.query(SQL_GET_COMMENTS, new CommentMapper_cwu_18());
+	}
+
+	public boolean createComment(Comment_cwu_18 newComment) {
+		return jdbcTemplate.update(SQL_CREATE_COMMENT, newComment.getComment_id(), newComment.getContent(),
+				newComment.getUser_id()) > 0;
 	}
 }
