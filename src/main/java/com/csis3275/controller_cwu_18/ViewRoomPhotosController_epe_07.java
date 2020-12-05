@@ -37,21 +37,5 @@ public class ViewRoomPhotosController_epe_07 {
 		
 		return "viewRoomPhotos_epe_07";
 	}
-	
-	@GetMapping("/roomPhotos")
-	public String showBookings(@RequestParam(required = true) int id, Model model) {
-		
-
-		ViewRoomPhotos_epe_07 roomPhotos = new ViewRoomPhotos_epe_07();
-		
-		model.addAttribute("roomPhotos", roomPhotos);
-		
-		User_sho_38 user = new User_sho_38();
-		int user_id = user.getUser_id();
-		
-		//int user_id = id;
-		model.addAttribute("userId", user_id);
-		return "viewRoomPhotos_epe_07";
-	}
 
 }
