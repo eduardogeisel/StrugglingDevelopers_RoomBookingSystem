@@ -76,3 +76,7 @@ insert into bookings (booking_id, dateTime, startTime, endTime, title, descripti
 insert into bookings (booking_id, dateTime, startTime, endTime, title, description, user_id, room_id) values (239717, '2020-10-30', '10:00', '12:00', 'Group Study', 'ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices', '100365660', 'D0953');
 insert into bookings (booking_id, dateTime, startTime, endTime, title, description, user_id, room_id) values (451009, '2020-09-16', '18:30', '20:30', 'Workshop', 'vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec', '100231584', 'D0803');
 insert into bookings (booking_id, dateTime, startTime, endTime, title, description, user_id, room_id) values (307692, '2020-10-02', '9:30', '11:30', 'Workshop', 'integer pede justo lacinia eget tincidunt eget tempus vel pede morbi porttitor lorem', '100231584', 'D0345');
+
+
+insert into comments (comment_id, content, user_id) values (135468, 'integer pede justo lacinia eget tincidunt eget tempus vel pede morbi porttitor lorem', '100231584');
+insert into comments (comment_id, content, user_id) values (651354, 'TSDSDFS ia eget tincidunt eget tempus vel pede morbi porttitor lorem', '100365660');
