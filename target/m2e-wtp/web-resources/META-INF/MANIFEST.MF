@@ -1,5 +1,9 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
+Built-By: joshi
+=======
 Built-By: admin
+>>>>>>> b726673c25c2f778635d7f2091201b7cc0e58214
 Build-Jdk: 14.0.2
 Created-By: Maven Integration for Eclipse
 
